@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bxkn1p41a46h0"]
+
+[ext_resource type="Shader" uid="uid://q43iu332xwdj" path="res://resources/materials/pixel_rotation_material.gdshader" id="1_m51vc"]
+
+[resource]
+shader = ExtResource("1_m51vc")
+shader_parameter/pixel_size = 1.0
+shader_parameter/handle_edges = false
