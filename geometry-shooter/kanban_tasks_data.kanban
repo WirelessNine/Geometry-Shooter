@@ -29,6 +29,7 @@
 			"uuid": "491af293-80a1-45b1-963f-521d47a23c2b",
 			"title": "Done",
 			"tasks": [
+				"8964b323-ce05-4ab0-8e44-c07ce4ca7e17",
 				"a0ab27df-a554-44e7-a5df-c18873dfd0e7",
 				"2b331268-3dc7-45a1-8d10-098a85559a3e"
 			]
@@ -94,6 +95,13 @@
 		{
 			"uuid": "2143543e-631a-4c64-ba2f-9d83d9f14fa4",
 			"title": "Add turret upgrades",
+			"description": "",
+			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
+			"steps": []
+		},
+		{
+			"uuid": "8964b323-ce05-4ab0-8e44-c07ce4ca7e17",
+			"title": "Add dropshadows",
 			"description": "",
 			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
 			"steps": []

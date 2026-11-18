@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://wgt0bx25fvsd"]
+
+[ext_resource type="Shader" uid="uid://dp0co34dhwlp0" path="res://resources/materials/drop_shadow.gdshader" id="1_jbytj"]
+
+[resource]
+shader = ExtResource("1_jbytj")
+shader_parameter/dist = -1
+shader_parameter/color = Color(0, 0, 0, 0.5)
+shader_parameter/angle = 93.95600446291
