@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://caeglvn6g0w1l" path="res://resources/tilesets/floor.tres" id="2_526id"]
 [ext_resource type="PackedScene" uid="uid://btj1tfe0y27la" path="res://scenes/characters/player.tscn" id="2_y2s00"]
 [ext_resource type="TileSet" uid="uid://c4vrx62e2ljp1" path="res://resources/tilesets/walls.tres" id="4_526id"]
+[ext_resource type="PackedScene" uid="uid://bwwme27d8y6y3" path="res://scenes/characters/red_dude.tscn" id="5_0aorq"]
 
 [node name="World" type="Node2D" unique_id=1940027194]
 script = ExtResource("1_0aorq")
@@ -22,3 +23,6 @@ tile_set = ExtResource("2_526id")
 [node name="Walls" type="TileMapLayer" parent="TileMaps" unique_id=366088156]
 tile_map_data = PackedByteArray("AAD+//7/AAAAAAAAAAD+////AAABAAAAAAD+/wAAAAABAAAAAAD+/wEAAAABAAAAAAD+/wIAAAAAAAAAACAFAAUAAAAEAAAAAGAFAAMAAAABAAAAAAAFAAQAAAABAAAAAAAEAAUAAAABAAAAAFADAAUAAAABAAAAAFACAAUAAAAAAAAAAGAFAAIAAAAAAAAAAAA=")
 tile_set = ExtResource("4_526id")
+
+[node name="RedDude" parent="." unique_id=1866562351 instance=ExtResource("5_0aorq")]
+position = Vector2(40, -23)

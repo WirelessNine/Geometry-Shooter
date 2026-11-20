@@ -9,6 +9,7 @@ radius = 7.0
 
 [node name="Player" type="CharacterBody2D" unique_id=839262105]
 collision_layer = 2
+collision_mask = 17
 script = ExtResource("1_rp718")
 metadata/_custom_type_script = "uid://tdfl7fxi2x2t"
 

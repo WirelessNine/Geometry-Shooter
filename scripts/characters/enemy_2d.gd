@@ -10,10 +10,13 @@ const LOOK_ACCURCY: float = 0.6
 @export var distance_buffer: float = 30.0
 @export var turret: Turret2D
 
+var health: int
 var bullet_timer: Timer
 
 
 func _ready() -> void:
+	health = max_health
+
 	_create_bullet_timer()
 
 
@@ -37,6 +40,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	_handle_turret(delta)
+
+
+func take_damage(amount: int) -> void:
+	health -= amount
+
+	if health <= 0:
+		queue_free()
 
 
 func _handle_turret(delta: float) -> void:

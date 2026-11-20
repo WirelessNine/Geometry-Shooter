@@ -26,6 +26,7 @@
 			"uuid": "491af293-80a1-45b1-963f-521d47a23c2b",
 			"title": "Done",
 			"tasks": [
+				"da98e93d-78d3-48c0-8e03-7fffd8db8d36",
 				"03040274-cab2-48bd-84cc-e1e98678108c",
 				"4f15d5ca-947d-481e-b5f6-31a79f98ab2f",
 				"8964b323-ce05-4ab0-8e44-c07ce4ca7e17",
@@ -94,6 +95,13 @@
 		{
 			"uuid": "8964b323-ce05-4ab0-8e44-c07ce4ca7e17",
 			"title": "Add dropshadows",
+			"description": "",
+			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
+			"steps": []
+		},
+		{
+			"uuid": "da98e93d-78d3-48c0-8e03-7fffd8db8d36",
+			"title": "Add enemy health and death",
 			"description": "",
 			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
 			"steps": []

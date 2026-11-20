@@ -5,13 +5,19 @@ extends Area2D
 signal life_timeout
 ##Emitted when the bullet collides with a wall.
 signal wall_collided
-##Emitted when the bullet collides with an enemy.
-signal enemy_collided
+##Emitted when the bullet collides with an enemy or the player.
+signal entity_collided
+##Emitted when the bullet pierces entities the max amount of times.
+signal max_pierces_reached
 ##Emitted when the life timer is created.
 signal timer_created
 
+@export var damage: int
+@export var max_pierces: int = 1
+
 var direction: Vector2
 var speed: float
+var pierces: int = 0
 
 var life_timer: Timer
 
@@ -31,6 +37,7 @@ func setup(p_direction: Vector2, p_speed: float) -> void:
 
 	direction = p_direction
 	speed = p_speed
+	pierces = 0
 
 
 func reset() -> void:
@@ -64,10 +71,22 @@ func _create_timer() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player2D:
-		return
+		pierces += 1
 
-	if body is Enemy2D:
-		enemy_collided.emit()
+		if pierces >= max_pierces:
+			max_pierces_reached.emit()
+
+		entity_collided.emit()
+
+	elif body is Enemy2D:
+		body.take_damage(damage)
+
+		pierces += 1
+
+		if pierces >= max_pierces:
+			max_pierces_reached.emit()
+
+		entity_collided.emit()
 	else:
 		wall_collided.emit()
 
