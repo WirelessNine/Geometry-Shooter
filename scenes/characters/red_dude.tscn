@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bwwme27d8y6y3"]
+
+[ext_resource type="Texture2D" uid="uid://ca6bblgkxgdv7" path="res://assets/spritesheets/characters.png" id="1_gt2dv"]
+[ext_resource type="Script" uid="uid://dv0seof8e2ryu" path="res://scripts/characters/enemy_2d.gd" id="1_qyjhr"]
+[ext_resource type="PackedScene" uid="uid://2t6iabqy4880" path="res://scenes/weapons/basic_turret.tscn" id="3_q81to"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_as85p"]
+radius = 7.0
+
+[node name="RedDude" type="CharacterBody2D" unique_id=1866562351 node_paths=PackedStringArray("turret")]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_qyjhr")
+turret = NodePath("BasicTurret")
+metadata/_custom_type_script = "uid://dv0seof8e2ryu"
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=527412255]
+texture = ExtResource("1_gt2dv")
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=267783617]
+modulate = Color(0, 0, 0, 0.42352942)
+show_behind_parent = true
+position = Vector2(1, 1)
+texture = ExtResource("1_gt2dv")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1173626652]
+shape = SubResource("CircleShape2D_as85p")
+
+[node name="BasicTurret" parent="." unique_id=1488103016 instance=ExtResource("3_q81to")]

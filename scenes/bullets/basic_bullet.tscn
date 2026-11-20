@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://ckq0dc1qxmqx2"]
 
-[ext_resource type="Script" uid="uid://dyqlucbo7husr" path="res://scripts/bullet_2d.gd" id="1_rnx8j"]
+[ext_resource type="Script" uid="uid://dyqlucbo7husr" path="res://scripts/weapons/bullet_2d.gd" id="1_rnx8j"]
 [ext_resource type="Texture2D" uid="uid://wsjylauwanct" path="res://assets/spritesheets/bullets.png" id="2_hik7s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_as85p"]
 radius = 4.0
 
 [node name="BasicBullet" type="Area2D" unique_id=436052010]
+collision_layer = 0
 script = ExtResource("1_rnx8j")
 metadata/_custom_type_script = "uid://dyqlucbo7husr"
 

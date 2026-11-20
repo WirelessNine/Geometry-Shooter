@@ -2,4 +2,7 @@ extends Turret2D
 
 
 func shoot() -> void:
-	bullet_pool.request_scene()
+	if space_raycast.is_colliding():
+		return
+
+	Globals.spawn_bullet_requested.emit(self)

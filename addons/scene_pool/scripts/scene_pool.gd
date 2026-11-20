@@ -4,12 +4,11 @@ extends RefCounted
 ##Container for a pool of scenes.
 
 ##Emitted if a new scene is created when requesting or updating.
-signal scene_created
+signal scene_created(scene: Node)
 ##Emitted if a new scene is created when requested. Only works with access mode [b]Dynamic[/b].
-signal scene_requested(node: Node)
+signal scene_requested(scene: Node)
 ##Emitted if a new scene is created when returned. Only works with access mode [b]Dynamic[/b].
-signal scene_returned(node: Node)
-
+signal scene_returned(scene: Node)
 
 ##Defines how the pool is accessed and managed.
 enum AccessMode {
@@ -18,6 +17,8 @@ enum AccessMode {
 	##Nodes are never taken from the [member inactive], instead, they are updated in order, the used ones are enabled (requested), and the unused ones are disabled (returned).
 	BATCHED,
 }
+
+const META_NAME: StringName = &"pool"
 
 ##The inactive access mode.
 var access_mode: AccessMode = AccessMode.DYNAMIC
@@ -38,6 +39,15 @@ var inactive: Array[Node]
 
 ##[Dictionary] of all scenes that are active.
 var active: Dictionary[Node, bool]
+
+
+##Returns the [ScenePool] that [param scene] is part of.
+static func get_owner_pool(scene: Node) -> ScenePool:
+	if not scene.has_meta(META_NAME):
+		push_error(scene, " is not part of a ScenePool.")
+		return null
+
+	return scene.get_meta(META_NAME)
 
 
 func _init(
@@ -72,7 +82,7 @@ func create_scene(instances: int) -> void:
 		inactive.append(_instantiate_scene())
 
 
-##Requests a single scene from the [member inactive] and returns it if possible. Only for Dynamic access mode.
+##Requests a single inactive scene and returns it if possible. Only for Dynamic access mode.
 func request_scene() -> Node:
 	if not access_mode == AccessMode.DYNAMIC:
 		push_error("access_mode is not DYNAMIC!")
@@ -81,34 +91,34 @@ func request_scene() -> Node:
 	if is_pool_exhausted():
 		create_scene(1)
 
-	var node: Node = inactive.pop_back()
-	active[node] = true
+	var scene: Node = inactive.pop_back()
+	active[scene] = true
 
-	on_requested.call(node)
-	scene_requested.emit(node)
+	on_requested.call(scene)
+	scene_requested.emit(scene)
 
-	return node
+	return scene
 
 
-##Returns the [param node] back to the [member inactive]. Only for Dynamic access mode.
-func return_scene(node: Node) -> void:
-	if node == null:
+##Makes the [param scene] inactive. Only for Dynamic access mode.
+func return_scene(scene: Node) -> void:
+	if scene == null:
 		return
 
 	if not access_mode == AccessMode.DYNAMIC:
 		push_error("access_mode is not DYNAMIC!")
 		return
 
-	if not node in active:
-		push_error(node, " is not active or part of the pool!")
+	if not scene in active:
+		push_error(scene, " is not active or part of the pool!")
 		return
 
-	inactive.append(node)
-	active.erase(node)
+	inactive.append(scene)
+	active.erase(scene)
 
-	on_returned.call(node)
+	on_returned.call(scene)
 
-	scene_returned.emit(node)
+	scene_returned.emit(scene)
 
 
 ##Calls the [param method] for each scene in the pool, with items from the [param array].[br]
@@ -162,9 +172,17 @@ func _on_returned(node: Node) -> void:
 
 
 func _instantiate_scene() -> Node:
-	var node: Node = packed_scene.instantiate()
-	parent.add_child.call_deferred(node)
+	var scene: Node = packed_scene.instantiate()
+	parent.add_child.call_deferred(scene)
 
-	on_created.call(node)
+	_add_pool_reference(scene)
 
-	return node
+	on_created.call(scene)
+	scene_created.emit(scene)
+
+	return scene
+
+
+##Adds a meta reference of the pool to [param scene].
+func _add_pool_reference(scene: Node) -> void:
+	scene.set_meta(META_NAME, self)

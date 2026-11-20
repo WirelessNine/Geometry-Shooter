@@ -11,8 +11,6 @@
 			"uuid": "ef874683-364e-4557-9c42-79861dadafab",
 			"title": "Todo",
 			"tasks": [
-				"03040274-cab2-48bd-84cc-e1e98678108c",
-				"3428639c-0d3c-405f-b0d3-380fdd8fb99f",
 				"49cca3bc-9701-4171-806a-75ed51b11ebf",
 				"9ddc47e0-e343-47fc-a9b9-17811656dd18",
 				"c1cf02c9-5adc-4720-8fac-4098b260d184",
@@ -28,6 +26,7 @@
 			"uuid": "491af293-80a1-45b1-963f-521d47a23c2b",
 			"title": "Done",
 			"tasks": [
+				"03040274-cab2-48bd-84cc-e1e98678108c",
 				"4f15d5ca-947d-481e-b5f6-31a79f98ab2f",
 				"8964b323-ce05-4ab0-8e44-c07ce4ca7e17",
 				"a0ab27df-a554-44e7-a5df-c18873dfd0e7",
@@ -59,14 +58,7 @@
 		},
 		{
 			"uuid": "03040274-cab2-48bd-84cc-e1e98678108c",
-			"title": "Add enemies and pathfinding",
-			"description": "",
-			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
-			"steps": []
-		},
-		{
-			"uuid": "3428639c-0d3c-405f-b0d3-380fdd8fb99f",
-			"title": "Add enemy shooting",
+			"title": "Add enemies, pathfinding and shooting",
 			"description": "",
 			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
 			"steps": []

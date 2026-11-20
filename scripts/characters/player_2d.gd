@@ -14,6 +14,8 @@ var shoot_db: bool = false
 func _ready() -> void:
 	current_turret = get_node(^"BasicTurret")
 
+	Globals.player = self
+
 
 func _physics_process(delta: float) -> void:
 	_handle_movement(delta)
@@ -33,9 +35,9 @@ func _handle_movement(delta: float) -> void:
 
 func _handle_turret(delta: float) -> void:
 	var mouse_pos: Vector2 = get_global_mouse_position()
-	var direction: Vector2 = mouse_pos - current_turret.global_position
+	var to_mouse: Vector2 = mouse_pos - current_turret.global_position
 
-	current_turret.rotation = lerp_angle(current_turret.rotation, direction.angle(), delta * 20.0)
+	current_turret.rotation = lerp_angle(current_turret.rotation, to_mouse.angle(), delta * 20.0)
 
 	if Input.is_action_pressed(&"shoot") and not shoot_db:
 		shoot_db = true

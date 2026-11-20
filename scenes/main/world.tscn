@@ -1,14 +1,18 @@
 [gd_scene format=4 uid="uid://cq5npwj1o3jw4"]
 
+[ext_resource type="Script" uid="uid://d2gbt1cfcv4gx" path="res://scenes/main/world.gd" id="1_0aorq"]
 [ext_resource type="TileSet" uid="uid://caeglvn6g0w1l" path="res://resources/tilesets/floor.tres" id="2_526id"]
 [ext_resource type="PackedScene" uid="uid://btj1tfe0y27la" path="res://scenes/characters/player.tscn" id="2_y2s00"]
 [ext_resource type="TileSet" uid="uid://c4vrx62e2ljp1" path="res://resources/tilesets/walls.tres" id="4_526id"]
 
 [node name="World" type="Node2D" unique_id=1940027194]
+script = ExtResource("1_0aorq")
 
 [node name="Player" parent="." unique_id=690910073 instance=ExtResource("2_y2s00")]
 
 [node name="TileMaps" type="Node2D" parent="." unique_id=67191673]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="Floor" type="TileMapLayer" parent="TileMaps" unique_id=1207958347]
 z_index = -1
