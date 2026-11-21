@@ -11,8 +11,6 @@
 			"uuid": "ef874683-364e-4557-9c42-79861dadafab",
 			"title": "Todo",
 			"tasks": [
-				"49cca3bc-9701-4171-806a-75ed51b11ebf",
-				"99b605f2-18d2-4f7b-a285-0c94f689c0c1",
 				"2143543e-631a-4c64-ba2f-9d83d9f14fa4",
 				"c6cb812b-5d1b-444d-ae23-57927cb19c4b"
 			]
@@ -26,6 +24,7 @@
 			"uuid": "491af293-80a1-45b1-963f-521d47a23c2b",
 			"title": "Done",
 			"tasks": [
+				"49cca3bc-9701-4171-806a-75ed51b11ebf",
 				"9ddc47e0-e343-47fc-a9b9-17811656dd18",
 				"f209b085-be7f-4b96-b081-5bea1103d92a",
 				"6b7eb05c-52f3-4cb1-9881-bc32780d5c20",
@@ -119,13 +118,6 @@
 		{
 			"uuid": "c6cb812b-5d1b-444d-ae23-57927cb19c4b",
 			"title": "Add juice and polish",
-			"description": "",
-			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
-			"steps": []
-		},
-		{
-			"uuid": "99b605f2-18d2-4f7b-a285-0c94f689c0c1",
-			"title": "Add more bullets",
 			"description": "",
 			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
 			"steps": []

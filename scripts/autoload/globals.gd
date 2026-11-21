@@ -1,6 +1,6 @@
 extends Node
 
-signal spawn_bullet_requested(turret: Turret2D)
+signal spawn_bullet_requested(turret: Turret2D, position: Vector2)
 signal upgrades_changed
 signal points_changed
 signal level_progress_changed
@@ -22,7 +22,7 @@ const LEVEL_GROWTH: float = 1.15
 const UPGRADE_DEFAULTS: Dictionary[Upgrade, float] = {
 	Upgrade.MAX_HEALTH: 1.0,
 	Upgrade.MOVEMENT_SPEED: 1.0,
-	Upgrade.ENDURANCE: 0.0,
+	Upgrade.ENDURANCE: 1.0,
 	Upgrade.BULLET_SPEED: 1.0,
 	Upgrade.RELOAD: 1.0,
 }
@@ -32,7 +32,7 @@ var player: Player2D
 var upgrade_values: Dictionary[Upgrade, float] = {
 	Upgrade.MAX_HEALTH: 1.0,
 	Upgrade.MOVEMENT_SPEED: 1.0,
-	Upgrade.ENDURANCE: 0.0,
+	Upgrade.ENDURANCE: 1.0,
 	Upgrade.BULLET_SPEED: 1.0,
 	Upgrade.RELOAD: 1.0,
 }

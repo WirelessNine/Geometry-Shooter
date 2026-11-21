@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ca6bblgkxgdv7" path="res://assets/spritesheets/characters.png" id="1_gt2dv"]
 [ext_resource type="Script" uid="uid://dv0seof8e2ryu" path="res://scripts/characters/enemy_2d.gd" id="1_qyjhr"]
-[ext_resource type="PackedScene" uid="uid://2t6iabqy4880" path="res://scenes/weapons/basic_turret.tscn" id="3_q81to"]
+[ext_resource type="PackedScene" uid="uid://2t6iabqy4880" path="res://scenes/weapons/shooter.tscn" id="3_q81to"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_as85p"]
 radius = 7.0

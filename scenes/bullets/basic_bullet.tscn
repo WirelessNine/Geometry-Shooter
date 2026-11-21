@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ckq0dc1qxmqx2"]
 
 [ext_resource type="Script" uid="uid://dyqlucbo7husr" path="res://scripts/weapons/bullet_2d.gd" id="1_rnx8j"]
-[ext_resource type="Texture2D" uid="uid://wsjylauwanct" path="res://assets/spritesheets/bullets.png" id="2_hik7s"]
+[ext_resource type="Texture2D" uid="uid://ca6bblgkxgdv7" path="res://assets/spritesheets/characters.png" id="2_hik7s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_as85p"]
 radius = 4.0
@@ -10,12 +10,13 @@ radius = 4.0
 collision_layer = 0
 script = ExtResource("1_rnx8j")
 damage = 5
+max_pierces = 2
 metadata/_custom_type_script = "uid://dyqlucbo7husr"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1233835429]
 texture = ExtResource("2_hik7s")
 region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
+region_rect = Rect2(0, 80, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1648934125]
 shape = SubResource("CircleShape2D_as85p")

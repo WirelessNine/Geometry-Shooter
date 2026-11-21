@@ -7,7 +7,7 @@ func _ready() -> void:
 	Globals.spawn_bullet_requested.connect(spawn_bullet)
 
 
-func spawn_bullet(turret: Turret2D) -> void:
+func spawn_bullet(turret: Turret2D, bullet_pos: Vector2) -> void:
 	var pool: ScenePool = _get_bullet_pool(turret.bullet_scene)
 
 	var bullet: Bullet2D = pool.request_scene()
@@ -17,7 +17,7 @@ func spawn_bullet(turret: Turret2D) -> void:
 
 	bullet.setup(Vector2.RIGHT.rotated(turret.rotation), turret.bullet_speed)
 
-	bullet.global_position = turret.spawn_pos.global_position
+	bullet.global_position = bullet_pos
 	bullet.reset_physics_interpolation()
 
 	bullet.start_timer(turret.bullet_lifetime)

@@ -14,6 +14,7 @@ signal timer_created
 
 @export var damage: int
 @export var max_pierces: int = 1
+@export var sprite: Sprite2D
 
 var direction: Vector2
 var speed: float
@@ -39,12 +40,19 @@ func setup(p_direction: Vector2, p_speed: float) -> void:
 	speed = p_speed
 	pierces = 0
 
+	set_deferred(&"monitoring", true)
+
+	if sprite:
+		rotation = direction.angle()
+
 
 func reset() -> void:
 	set_physics_process(false)
 
 	direction = Vector2.ZERO
 	speed = 0.0
+
+	set_deferred(&"monitoring", false)
 
 
 func start_timer(time_sec: float) -> void:
@@ -71,7 +79,7 @@ func _create_timer() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player2D:
-		body.take_damage(damage)
+		body.take_damage(damage / Globals.get_upgrade_value(Globals.Upgrade.ENDURANCE))
 
 		pierces += 1
 
