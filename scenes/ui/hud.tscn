@@ -1,0 +1,255 @@
+[gd_scene format=3 uid="uid://qtf83fswfkqi"]
+
+[ext_resource type="Texture2D" uid="uid://1jpyqgepyqv4" path="res://resources/textures/ui/progress_bg.tres" id="1_0mwgc"]
+[ext_resource type="Texture2D" uid="uid://bqbbae1g0pi6" path="res://resources/textures/ui/heart_bg.tres" id="1_gss2c"]
+[ext_resource type="Script" uid="uid://b7c2kgxpvcop0" path="res://scenes/ui/hud.gd" id="1_h022r"]
+[ext_resource type="Texture2D" uid="uid://ca2way0rlbaym" path="res://resources/textures/ui/add_button.tres" id="2_8qguk"]
+[ext_resource type="LabelSettings" uid="uid://7iv8y7rcm25r" path="res://resources/labels/default_settings.tres" id="2_gss2c"]
+[ext_resource type="Texture2D" uid="uid://dksbow5d76dkc" path="res://resources/textures/ui/heart_fil.tres" id="2_h022r"]
+[ext_resource type="Texture2D" uid="uid://daffk4q1ymstx" path="res://resources/textures/ui/progress_fill.tres" id="2_hqnrr"]
+[ext_resource type="Texture2D" uid="uid://3c0xxcwk86qu" path="res://resources/textures/ui/add_button_disabled.tres" id="3_136eg"]
+
+[node name="HUD" type="MarginContainer" unique_id=1444111960]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+script = ExtResource("1_h022r")
+metadata/_edit_lock_ = true
+
+[node name="HealthBar" type="TextureProgressBar" parent="." unique_id=963711170]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-14, 14)
+offset_transform_scale = Vector2(2, 2)
+value = 21.0
+fill_mode = 4
+texture_under = ExtResource("1_gss2c")
+texture_progress = ExtResource("2_h022r")
+
+[node name="LevelBar" type="TextureProgressBar" parent="." unique_id=1567807583]
+custom_minimum_size = Vector2(140, 14)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+value = 50.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_under = ExtResource("1_0mwgc")
+texture_progress = ExtResource("2_hqnrr")
+tint_progress = Color(0.3, 0.60333335, 1, 1)
+
+[node name="LevelLabel" type="Label" parent="LevelBar" unique_id=1527615129]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 2"
+label_settings = ExtResource("2_gss2c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradesVBox" type="VBoxContainer" parent="." unique_id=2133562526]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="Points" type="Label" parent="UpgradesVBox" unique_id=427268536]
+layout_mode = 2
+text = "2 points"
+label_settings = ExtResource("2_gss2c")
+
+[node name="UpgradesGrid" type="GridContainer" parent="UpgradesVBox" unique_id=2061639194]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 2
+
+[node name="MaxHealthBar" type="TextureProgressBar" parent="UpgradesVBox/UpgradesGrid" unique_id=563403397]
+custom_minimum_size = Vector2(120, 14)
+layout_mode = 2
+value = 50.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_under = ExtResource("1_0mwgc")
+texture_progress = ExtResource("2_hqnrr")
+tint_progress = Color(1, 0.3, 0.3, 1)
+
+[node name="Label" type="Label" parent="UpgradesVBox/UpgradesGrid/MaxHealthBar" unique_id=819469808]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Max Health"
+label_settings = ExtResource("2_gss2c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="UpgradesVBox/UpgradesGrid" unique_id=1988242432]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("2_8qguk")
+texture_pressed = ExtResource("2_8qguk")
+texture_hover = ExtResource("2_8qguk")
+texture_disabled = ExtResource("3_136eg")
+stretch_mode = 3
+
+[node name="MovementSpeedBar" type="TextureProgressBar" parent="UpgradesVBox/UpgradesGrid" unique_id=1569972294]
+custom_minimum_size = Vector2(120, 14)
+layout_mode = 2
+value = 50.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_under = ExtResource("1_0mwgc")
+texture_progress = ExtResource("2_hqnrr")
+tint_progress = Color(0.49, 0.76199996, 1, 1)
+
+[node name="Label" type="Label" parent="UpgradesVBox/UpgradesGrid/MovementSpeedBar" unique_id=1422912262]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Movement Speed"
+label_settings = ExtResource("2_gss2c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton2" type="TextureButton" parent="UpgradesVBox/UpgradesGrid" unique_id=327466108]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("2_8qguk")
+texture_pressed = ExtResource("2_8qguk")
+texture_hover = ExtResource("2_8qguk")
+texture_disabled = ExtResource("3_136eg")
+stretch_mode = 3
+
+[node name="EnduranceBar" type="TextureProgressBar" parent="UpgradesVBox/UpgradesGrid" unique_id=418533945]
+custom_minimum_size = Vector2(120, 14)
+layout_mode = 2
+value = 50.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_under = ExtResource("1_0mwgc")
+texture_progress = ExtResource("2_hqnrr")
+tint_progress = Color(0.74, 0.74, 0.74, 1)
+
+[node name="Label" type="Label" parent="UpgradesVBox/UpgradesGrid/EnduranceBar" unique_id=1977396186]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Endurance"
+label_settings = ExtResource("2_gss2c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton3" type="TextureButton" parent="UpgradesVBox/UpgradesGrid" unique_id=1028181890]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("2_8qguk")
+texture_pressed = ExtResource("2_8qguk")
+texture_hover = ExtResource("2_8qguk")
+texture_disabled = ExtResource("3_136eg")
+stretch_mode = 3
+
+[node name="BulletSpeedBar" type="TextureProgressBar" parent="UpgradesVBox/UpgradesGrid" unique_id=351129093]
+custom_minimum_size = Vector2(120, 14)
+layout_mode = 2
+value = 50.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_under = ExtResource("1_0mwgc")
+texture_progress = ExtResource("2_hqnrr")
+tint_progress = Color(1, 0.931, 0.31, 1)
+
+[node name="Label" type="Label" parent="UpgradesVBox/UpgradesGrid/BulletSpeedBar" unique_id=721644428]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bullet Speed"
+label_settings = ExtResource("2_gss2c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton4" type="TextureButton" parent="UpgradesVBox/UpgradesGrid" unique_id=983524474]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("2_8qguk")
+texture_pressed = ExtResource("2_8qguk")
+texture_hover = ExtResource("2_8qguk")
+texture_disabled = ExtResource("3_136eg")
+stretch_mode = 3
+
+[node name="ReloadBar" type="TextureProgressBar" parent="UpgradesVBox/UpgradesGrid" unique_id=1495742736]
+custom_minimum_size = Vector2(120, 14)
+layout_mode = 2
+value = 50.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_under = ExtResource("1_0mwgc")
+texture_progress = ExtResource("2_hqnrr")
+tint_progress = Color(0.24000001, 1, 0.49333346, 1)
+
+[node name="Label" type="Label" parent="UpgradesVBox/UpgradesGrid/ReloadBar" unique_id=2097026170]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Reload"
+label_settings = ExtResource("2_gss2c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton5" type="TextureButton" parent="UpgradesVBox/UpgradesGrid" unique_id=715274256]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("2_8qguk")
+texture_pressed = ExtResource("2_8qguk")
+texture_hover = ExtResource("2_8qguk")
+texture_disabled = ExtResource("3_136eg")
+stretch_mode = 3
