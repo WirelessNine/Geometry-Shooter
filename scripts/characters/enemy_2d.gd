@@ -8,6 +8,7 @@ const LOOK_ACCURCY: float = 0.6
 @export var speed: float = 60.0
 @export var player_distance: float = 50.0
 @export var distance_buffer: float = 30.0
+@export var xp: int = 10
 @export var turret: Turret2D
 
 var health: int
@@ -46,6 +47,7 @@ func take_damage(amount: int) -> void:
 	health -= amount
 
 	if health <= 0:
+		Globals.add_level_progress(xp)
 		queue_free()
 
 

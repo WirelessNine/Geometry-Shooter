@@ -1,8 +1,9 @@
 class_name Player2D
 extends CharacterBody2D
 
-const WALK_SPEED: float = 80.0
-const SPRINT_SPEED: float = 140.0
+const DEFAULT_HEALTH: int = 100
+
+const DEFAULT_SPEED: float = 80.0
 const SMOOTHNESS: float = 20.0
 
 var current_turret: Turret2D
@@ -10,11 +11,15 @@ var shoot_db: bool = false
 
 @onready var bullet_timer: Timer = %BulletTimer
 
+var health: int
+
 
 func _ready() -> void:
 	current_turret = get_node(^"BasicTurret")
+	health = get_max_health()
 
 	Globals.player = self
+	Globals.player_health_changed.emit(health)
 
 
 func _physics_process(delta: float) -> void:
@@ -22,11 +27,15 @@ func _physics_process(delta: float) -> void:
 	_handle_turret(delta)
 
 
+func get_max_health() -> int:
+	return roundi(DEFAULT_HEALTH * Globals.get_upgrade_value(Globals.Upgrade.MAX_HEALTH))
+
+
 func _handle_movement(delta: float) -> void:
 	var input_vector: Vector2 = Input.get_vector(&"left", &"right", &"up", &"down")
 	var lerp_weight: float = delta * SMOOTHNESS
 
-	var speed: float = SPRINT_SPEED if Input.is_action_pressed(&"sprint") else WALK_SPEED
+	var speed: float = DEFAULT_SPEED * Globals.get_upgrade_value(Globals.Upgrade.MOVEMENT_SPEED)
 
 	velocity = velocity.lerp(input_vector * speed, lerp_weight)
 

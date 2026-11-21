@@ -110,7 +110,6 @@ func return_scene(scene: Node) -> void:
 		return
 
 	if not scene in active:
-		push_error(scene, " is not active or part of the pool!")
 		return
 
 	inactive.append(scene)
