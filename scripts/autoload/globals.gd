@@ -45,7 +45,7 @@ var upgrade_levels: Dictionary[Upgrade, int] = {
 	Upgrade.RELOAD: 0,
 }
 
-var points: int = 0
+var points: int = 5
 var level: int = 0
 var level_progress: int = 0
 

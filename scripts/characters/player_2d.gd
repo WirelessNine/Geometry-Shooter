@@ -27,6 +27,22 @@ func _physics_process(delta: float) -> void:
 	_handle_turret(delta)
 
 
+func add_health(amount: int) -> void:
+	print(get_max_health())
+	health = mini(health + amount, get_max_health())
+
+	Globals.player_health_changed.emit(health)
+
+
+func take_damage(amount: int) -> void:
+	health -= amount
+
+	if health <= 0:
+		get_tree().reload_current_scene.call_deferred()
+
+	Globals.player_health_changed.emit(health)
+
+
 func get_max_health() -> int:
 	return roundi(DEFAULT_HEALTH * Globals.get_upgrade_value(Globals.Upgrade.MAX_HEALTH))
 
@@ -57,3 +73,7 @@ func _handle_turret(delta: float) -> void:
 
 func _on_bullet_timer_timeout() -> void:
 	shoot_db = false
+
+
+func _on_regeneration_timer_timeout() -> void:
+	add_health(roundi(get_max_health() * 0.05))

@@ -71,6 +71,8 @@ func _create_timer() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player2D:
+		body.take_damage(damage)
+
 		pierces += 1
 
 		if pierces >= max_pierces:

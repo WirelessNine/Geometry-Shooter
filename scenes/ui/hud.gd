@@ -59,6 +59,9 @@ func refresh_upgrades() -> void:
 	bullet_speed_bar.value = Globals.get_upgrade_level(Globals.Upgrade.BULLET_SPEED)
 	reload_bar.value = Globals.get_upgrade_level(Globals.Upgrade.RELOAD)
 
+	if Globals.player:
+		refresh_health_bar(Globals.player.health)
+
 
 func refresh_level() -> void:
 	level_label.text = "Level %d" % Globals.level

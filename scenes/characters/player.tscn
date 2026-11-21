@@ -40,4 +40,10 @@ process_callback = 0
 unique_name_in_owner = true
 one_shot = true
 
+[node name="RegenerationTimer" type="Timer" parent="." unique_id=1654279934]
+process_callback = 0
+wait_time = 5.0
+autostart = true
+
 [connection signal="timeout" from="BulletTimer" to="." method="_on_bullet_timer_timeout"]
+[connection signal="timeout" from="RegenerationTimer" to="." method="_on_regeneration_timer_timeout"]
