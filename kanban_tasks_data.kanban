@@ -21,6 +21,7 @@
 			"uuid": "491af293-80a1-45b1-963f-521d47a23c2b",
 			"title": "Done",
 			"tasks": [
+				"7d3114f3-f001-49c2-8ac2-df770bbf5223",
 				"a8097f07-e2c8-4c43-b98f-463403368d28",
 				"2143543e-631a-4c64-ba2f-9d83d9f14fa4",
 				"49cca3bc-9701-4171-806a-75ed51b11ebf",
@@ -117,6 +118,13 @@
 		{
 			"uuid": "a8097f07-e2c8-4c43-b98f-463403368d28",
 			"title": "Complete the map",
+			"description": "",
+			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
+			"steps": []
+		},
+		{
+			"uuid": "7d3114f3-f001-49c2-8ac2-df770bbf5223",
+			"title": "Add more enemies and waves",
 			"description": "",
 			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
 			"steps": []

@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const DEFAULT_HEALTH: int = 100
 
-const DEFAULT_SPEED: float = 80.0
+const DEFAULT_SPEED: float = 120.0
 const SMOOTHNESS: float = 20.0
 
 var current_turret_scene: PackedScene

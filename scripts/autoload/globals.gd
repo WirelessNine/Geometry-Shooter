@@ -16,7 +16,7 @@ enum Upgrade {
 	RELOAD,
 }
 
-const BASE_LEVEL_REQUIRED: int = 100
+const BASE_LEVEL_REQUIRED: int = 50
 const LEVEL_GROWTH: float = 1.15
 
 const UPGRADE_DEFAULTS: Dictionary[Upgrade, float] = {
@@ -47,7 +47,7 @@ var upgrade_levels: Dictionary[Upgrade, int] = {
 
 var weapons: Array[PackedScene]
 
-var points: int = 5
+var points: int = 0
 var level: int = 0
 var level_progress: int = 0
 

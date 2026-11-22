@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://b6fnn5m3xa1a"]
+
+[ext_resource type="Script" uid="uid://dv0seof8e2ryu" path="res://scripts/characters/enemy_2d.gd" id="1_odtic"]
+[ext_resource type="Texture2D" uid="uid://ca6bblgkxgdv7" path="res://assets/spritesheets/characters.png" id="2_ifjfw"]
+[ext_resource type="PackedScene" uid="uid://da5qm6jvngm3v" path="res://scenes/weapons/rifle.tscn" id="3_odtic"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_as85p"]
+radius = 7.0
+
+[node name="RifleDude" type="CharacterBody2D" unique_id=1866562351 node_paths=PackedStringArray("turret")]
+collision_layer = 4
+collision_mask = 13
+script = ExtResource("1_odtic")
+max_health = 30
+speed = 65.0
+player_distance = 80.0
+xp = 15
+turret = NodePath("Rifle")
+metadata/_custom_type_script = "uid://dv0seof8e2ryu"
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=527412255]
+texture = ExtResource("2_ifjfw")
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=267783617]
+modulate = Color(0, 0, 0, 0.42352942)
+show_behind_parent = true
+position = Vector2(1, 1)
+texture = ExtResource("2_ifjfw")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1173626652]
+shape = SubResource("CircleShape2D_as85p")
+
+[node name="Rifle" parent="." unique_id=1488103016 instance=ExtResource("3_odtic")]
+enemy_turret = true

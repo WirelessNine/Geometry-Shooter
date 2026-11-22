@@ -12,8 +12,8 @@ collision_layer = 4
 collision_mask = 13
 script = ExtResource("1_qyjhr")
 max_health = 20
-xp = 100
-turret = NodePath("BasicTurret")
+xp = 5
+turret = NodePath("Shooter")
 metadata/_custom_type_script = "uid://dv0seof8e2ryu"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=527412255]
@@ -32,5 +32,5 @@ region_rect = Rect2(0, 0, 16, 16)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1173626652]
 shape = SubResource("CircleShape2D_as85p")
 
-[node name="BasicTurret" parent="." unique_id=1488103016 instance=ExtResource("3_q81to")]
+[node name="Shooter" parent="." unique_id=1488103016 instance=ExtResource("3_q81to")]
 enemy_turret = true

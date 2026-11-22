@@ -1,6 +1,8 @@
 class_name Enemy2D
 extends CharacterBody2D
 
+signal died
+
 const SMOOTHNESS: float = 20.0
 const LOOK_ACCURCY: float = 0.6
 
@@ -49,6 +51,8 @@ func take_damage(amount: int) -> void:
 	if health <= 0:
 		Globals.add_level_progress(xp)
 		queue_free()
+
+		died.emit()
 
 
 func _handle_turret(delta: float) -> void:

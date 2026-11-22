@@ -9,7 +9,7 @@ radius = 3.0
 [node name="Pellet" type="Area2D" unique_id=436052010]
 collision_layer = 0
 script = ExtResource("1_3c2lg")
-damage = 5
+damage = 2
 metadata/_custom_type_script = "uid://dyqlucbo7husr"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1233835429]

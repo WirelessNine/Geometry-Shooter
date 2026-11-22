@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://wv4cugjbkwhr"]
+
+[ext_resource type="Script" uid="uid://dv0seof8e2ryu" path="res://scripts/characters/enemy_2d.gd" id="1_uu4es"]
+[ext_resource type="Texture2D" uid="uid://ca6bblgkxgdv7" path="res://assets/spritesheets/characters.png" id="2_85rro"]
+[ext_resource type="PackedScene" uid="uid://bvljnc2ghoqwb" path="res://scenes/weapons/bowler.tscn" id="3_uu4es"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_as85p"]
+radius = 7.0
+
+[node name="BowlerDude" type="CharacterBody2D" unique_id=1866562351 node_paths=PackedStringArray("turret")]
+collision_layer = 4
+collision_mask = 13
+script = ExtResource("1_uu4es")
+max_health = 40
+speed = 45.0
+player_distance = 30.0
+distance_buffer = 15.0
+xp = 20
+turret = NodePath("Bowler")
+metadata/_custom_type_script = "uid://dv0seof8e2ryu"
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=527412255]
+texture = ExtResource("2_85rro")
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=267783617]
+modulate = Color(0, 0, 0, 0.42352942)
+show_behind_parent = true
+position = Vector2(1, 1)
+texture = ExtResource("2_85rro")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1173626652]
+shape = SubResource("CircleShape2D_as85p")
+
+[node name="Bowler" parent="." unique_id=1488103016 instance=ExtResource("3_uu4es")]
+enemy_turret = true

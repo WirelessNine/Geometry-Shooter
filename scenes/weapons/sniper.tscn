@@ -12,7 +12,7 @@ space_raycast = NodePath("RayCast")
 spawn_pos = NodePath("Spawn")
 bullet_speed = 500.0
 bullet_lifetime = 5.0
-shoot_delay = 0.8
+shoot_delay = 1.4
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=133114263]
 position = Vector2(8, 0)
