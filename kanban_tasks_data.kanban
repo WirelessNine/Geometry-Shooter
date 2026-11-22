@@ -21,6 +21,7 @@
 			"uuid": "491af293-80a1-45b1-963f-521d47a23c2b",
 			"title": "Done",
 			"tasks": [
+				"a8097f07-e2c8-4c43-b98f-463403368d28",
 				"2143543e-631a-4c64-ba2f-9d83d9f14fa4",
 				"49cca3bc-9701-4171-806a-75ed51b11ebf",
 				"9ddc47e0-e343-47fc-a9b9-17811656dd18",
@@ -109,6 +110,13 @@
 		{
 			"uuid": "f209b085-be7f-4b96-b081-5bea1103d92a",
 			"title": "Add points and upgrades",
+			"description": "",
+			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
+			"steps": []
+		},
+		{
+			"uuid": "a8097f07-e2c8-4c43-b98f-463403368d28",
+			"title": "Complete the map",
 			"description": "",
 			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
 			"steps": []
