@@ -10,10 +10,7 @@
 		{
 			"uuid": "ef874683-364e-4557-9c42-79861dadafab",
 			"title": "Todo",
-			"tasks": [
-				"2143543e-631a-4c64-ba2f-9d83d9f14fa4",
-				"c6cb812b-5d1b-444d-ae23-57927cb19c4b"
-			]
+			"tasks": []
 		},
 		{
 			"uuid": "8e17442f-3a75-40de-bcb7-aec1cf4cbcaa",
@@ -24,6 +21,7 @@
 			"uuid": "491af293-80a1-45b1-963f-521d47a23c2b",
 			"title": "Done",
 			"tasks": [
+				"2143543e-631a-4c64-ba2f-9d83d9f14fa4",
 				"49cca3bc-9701-4171-806a-75ed51b11ebf",
 				"9ddc47e0-e343-47fc-a9b9-17811656dd18",
 				"f209b085-be7f-4b96-b081-5bea1103d92a",
@@ -111,13 +109,6 @@
 		{
 			"uuid": "f209b085-be7f-4b96-b081-5bea1103d92a",
 			"title": "Add points and upgrades",
-			"description": "",
-			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
-			"steps": []
-		},
-		{
-			"uuid": "c6cb812b-5d1b-444d-ae23-57927cb19c4b",
-			"title": "Add juice and polish",
 			"description": "",
 			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
 			"steps": []

@@ -45,9 +45,21 @@ var upgrade_levels: Dictionary[Upgrade, int] = {
 	Upgrade.RELOAD: 0,
 }
 
+var weapons: Array[PackedScene]
+
 var points: int = 5
 var level: int = 0
 var level_progress: int = 0
+
+
+func _ready() -> void:
+	weapons = [
+		load("uid://2t6iabqy4880"),
+		load("uid://t8037sqjyaov"),
+		load("uid://da5qm6jvngm3v"),
+		load("uid://bvljnc2ghoqwb"),
+		load("uid://bs7lxupdl0os4"),
+	]
 
 
 func set_upgrade_level(upgrade: Upgrade, new_level: int) -> void:

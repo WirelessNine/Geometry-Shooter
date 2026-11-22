@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://btj1tfe0y27la" path="res://scenes/characters/player.tscn" id="2_y2s00"]
 [ext_resource type="PackedScene" uid="uid://qtf83fswfkqi" path="res://scenes/ui/hud.tscn" id="2_yshnf"]
 [ext_resource type="TileSet" uid="uid://c4vrx62e2ljp1" path="res://resources/tilesets/walls.tres" id="4_526id"]
-[ext_resource type="PackedScene" uid="uid://bwwme27d8y6y3" path="res://scenes/characters/red_dude.tscn" id="5_0aorq"]
+[ext_resource type="PackedScene" uid="uid://bwwme27d8y6y3" path="res://scenes/characters/red_dude.tscn" id="6_yshnf"]
 
 [node name="World" type="Node2D" unique_id=1940027194]
 script = ExtResource("1_0aorq")
@@ -29,23 +29,38 @@ tile_set = ExtResource("2_526id")
 tile_map_data = PackedByteArray("AAD+//7/AAAAAAAAAAD+////AAABAAAAAAD+/wAAAAABAAAAAAD+/wEAAAABAAAAAAD+/wIAAAAAAAAAACAFAAUAAAAEAAAAAGAFAAMAAAABAAAAAAAFAAQAAAABAAAAAAAEAAUAAAABAAAAAFADAAUAAAABAAAAAFACAAUAAAAAAAAAAGAFAAIAAAAAAAAAAAA=")
 tile_set = ExtResource("4_526id")
 
-[node name="RedDude" parent="." unique_id=1866562351 instance=ExtResource("5_0aorq")]
-position = Vector2(40, -23)
+[node name="RedDude" parent="." unique_id=1866562351 instance=ExtResource("6_yshnf")]
+position = Vector2(49, -37)
 
-[node name="RedDude2" parent="." unique_id=695412554 instance=ExtResource("5_0aorq")]
-position = Vector2(85, -3)
+[node name="RedDude2" parent="." unique_id=227361692 instance=ExtResource("6_yshnf")]
+position = Vector2(101, -19)
 
-[node name="RedDude3" parent="." unique_id=1160928784 instance=ExtResource("5_0aorq")]
-position = Vector2(96, -49)
+[node name="RedDude3" parent="." unique_id=1204047873 instance=ExtResource("6_yshnf")]
+position = Vector2(53, 3)
 
-[node name="RedDude4" parent="." unique_id=1308852514 instance=ExtResource("5_0aorq")]
-position = Vector2(48, -79)
+[node name="RedDude4" parent="." unique_id=1664316574 instance=ExtResource("6_yshnf")]
+position = Vector2(123, 11)
 
-[node name="RedDude5" parent="." unique_id=768428079 instance=ExtResource("5_0aorq")]
-position = Vector2(99, -96)
+[node name="RedDude5" parent="." unique_id=677934579 instance=ExtResource("6_yshnf")]
+position = Vector2(137, -29)
 
-[node name="RedDude6" parent="." unique_id=899755133 instance=ExtResource("5_0aorq")]
-position = Vector2(138, -57)
+[node name="RedDude6" parent="." unique_id=843945889 instance=ExtResource("6_yshnf")]
+position = Vector2(88, -53)
 
-[node name="RedDude7" parent="." unique_id=288933182 instance=ExtResource("5_0aorq")]
-position = Vector2(132, -11)
+[node name="RedDude7" parent="." unique_id=498103185 instance=ExtResource("6_yshnf")]
+position = Vector2(51, 45)
+
+[node name="RedDude8" parent="." unique_id=1074353723 instance=ExtResource("6_yshnf")]
+position = Vector2(16, -26)
+
+[node name="RedDude9" parent="." unique_id=672995852 instance=ExtResource("6_yshnf")]
+position = Vector2(3, -52)
+
+[node name="RedDude10" parent="." unique_id=1601032171 instance=ExtResource("6_yshnf")]
+position = Vector2(-45, -52)
+
+[node name="RedDude11" parent="." unique_id=1444916697 instance=ExtResource("6_yshnf")]
+position = Vector2(-60, -17)
+
+[node name="RedDude12" parent="." unique_id=1626066878 instance=ExtResource("6_yshnf")]
+position = Vector2(-54, 29)

@@ -6,6 +6,7 @@ const DEFAULT_HEALTH: int = 100
 const DEFAULT_SPEED: float = 80.0
 const SMOOTHNESS: float = 20.0
 
+var current_turret_scene: PackedScene
 var current_turret: Turret2D
 var shoot_db: bool = false
 
@@ -15,11 +16,17 @@ var health: int
 
 
 func _ready() -> void:
-	current_turret = get_node(^"BasicTurret")
+	set_turret(Globals.weapons[0])
 	health = get_max_health()
 
 	Globals.player = self
 	Globals.player_health_changed.emit(health)
+
+	Globals.level_changed.connect(
+		func() -> void:
+			if Globals.level % 5 == 0:
+				randomize_weapon(),
+	)
 
 
 func _physics_process(delta: float) -> void:
@@ -45,6 +52,27 @@ func take_damage(amount: int) -> void:
 
 func get_max_health() -> int:
 	return roundi(DEFAULT_HEALTH * Globals.get_upgrade_value(Globals.Upgrade.MAX_HEALTH))
+
+
+func set_turret(turret_scene: PackedScene) -> void:
+	if is_instance_valid(current_turret):
+		current_turret.queue_free()
+
+	var turret: Turret2D = turret_scene.instantiate()
+	add_child(turret)
+
+	current_turret = turret
+	current_turret_scene = turret_scene
+
+
+func randomize_weapon() -> void:
+	var turret_scene: PackedScene = Globals.weapons.pick_random()
+
+	if turret_scene == current_turret_scene:
+		randomize_weapon()
+		return
+
+	set_turret(turret_scene)
 
 
 func _handle_movement(delta: float) -> void:

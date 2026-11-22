@@ -2,8 +2,10 @@
 class_name ScenePool
 extends RefCounted
 ##Container for a pool of scenes.
+##
+##Container for a pool of scenes. A ScenePool manages object pooling for instances of a packed scene very simple. It reuses scenes instead of instatiating and freeing them which improves performance and reduces memory fragmentation.
 
-##Emitted if a new scene is created when requesting or updating.
+##Emitted if a new scene is created.
 signal scene_created(scene: Node)
 ##Emitted if a new scene is created when requested. Only works with access mode [b]Dynamic[/b].
 signal scene_requested(scene: Node)
@@ -12,37 +14,42 @@ signal scene_returned(scene: Node)
 
 ##Defines how the pool is accessed and managed.
 enum AccessMode {
-	##Nodes are taken and returned from the [member inactive] individually, when needed.
+	##Inactive scenes are taken and returned individually, when needed.
 	DYNAMIC,
-	##Nodes are never taken from the [member inactive], instead, they are updated in order, the used ones are enabled (requested), and the unused ones are disabled (returned).
+	##Scenes are are updated in order, the used ones are enabled, and the unused ones are disabled.
 	BATCHED,
 }
 
+##The name of the metadata that stores the [ScenePool] of a scene.
 const META_NAME: StringName = &"pool"
 
-##The inactive access mode.
+##The access mode for scenes.
 var access_mode: AccessMode = AccessMode.DYNAMIC
-##The packed scene instantiated for in the inactive.
+##The packed scene instantiated and pooled.
 var packed_scene: PackedScene
-##The parent node of all scenes created.
+##The node where instatiated scenes are parented.
 var parent: Node
 
-##[Callable] called when a scene is instantiated.
+##The method called when a scene is instantiated.
 var on_created: Callable
-##[Callable] called when a scene is requested.
+##The method called when a scene is requested.
 var on_requested: Callable
-##[Callable] called when a scene is returned.
+##The method called when a scene is returned.
 var on_returned: Callable
 
-##[Array] of all scenes that are inactive.
+##The list of scenes that are inactive.
 var inactive: Array[Node]
 
-##[Dictionary] of all scenes that are active.
+##The list of scenes scenes that are active.
 var active: Dictionary[Node, bool]
 
 
 ##Returns the [ScenePool] that [param scene] is part of.
 static func get_owner_pool(scene: Node) -> ScenePool:
+	if not scene:
+		push_error(scene, " is not valid.")
+		return
+
 	if not scene.has_meta(META_NAME):
 		push_error(scene, " is not part of a ScenePool.")
 		return null
@@ -68,6 +75,9 @@ func _init(
 
 	create_scene(p_start_scenes)
 
+	if is_instance_valid(p_parent):
+		parent.tree_exiting.connect(clear_pool)
+
 
 func _to_string() -> String:
 	return "ScenePool of %s" % packed_scene
@@ -82,7 +92,8 @@ func create_scene(instances: int) -> void:
 		inactive.append(_instantiate_scene())
 
 
-##Requests a single inactive scene and returns it if possible. Only for Dynamic access mode.
+##Requests a scenes and returns it. [br]
+##[important]: This method only works for Dynamic access mode.
 func request_scene() -> Node:
 	if not access_mode == AccessMode.DYNAMIC:
 		push_error("access_mode is not DYNAMIC!")
@@ -100,7 +111,8 @@ func request_scene() -> Node:
 	return scene
 
 
-##Makes the [param scene] inactive. Only for Dynamic access mode.
+##Makes the [param scene] inactive. [br]
+##[important]: This method only works for Dynamic access mode.
 func return_scene(scene: Node) -> void:
 	if scene == null:
 		return
@@ -109,7 +121,7 @@ func return_scene(scene: Node) -> void:
 		push_error("access_mode is not DYNAMIC!")
 		return
 
-	if not scene in active:
+	if not is_scene_active(scene):
 		return
 
 	inactive.append(scene)
@@ -120,14 +132,15 @@ func return_scene(scene: Node) -> void:
 	scene_returned.emit(scene)
 
 
-##Calls the [param method] for each scene in the pool, with items from the [param array].[br]
-##The first parameter should be the scene/node, and the second one the item from the [param array].
-func update_scenes(array: Array, method: Callable) -> void:
+##Calls the [param method] for each scene in the pool, with elements from the [param items] array.[br]
+##[note]: The first parameter is the scene, and the second the item. [br]
+##[important]: This method only works for Batched access mode.
+func update_scenes(items: Array, method: Callable) -> void:
 	if not access_mode == AccessMode.BATCHED:
 		push_error("access_mode is not BATCHED!")
 		return
 
-	var array_size: int = array.size()
+	var array_size: int = items.size()
 	var pool_size: int = inactive.size()
 
 	if array_size > pool_size:
@@ -137,7 +150,7 @@ func update_scenes(array: Array, method: Callable) -> void:
 			on_returned.call(inactive[x])
 
 	for x: int in array_size:
-		var item: Variant = array[x]
+		var item: Variant = items[x]
 		var node: Node = inactive[x]
 
 		on_requested.call(node)
@@ -145,9 +158,32 @@ func update_scenes(array: Array, method: Callable) -> void:
 		method.call(node, item)
 
 
-##Returns [code]true[/code] if [param node] is active.
-func is_scene_active(node: Node) -> bool:
-	return node in active
+##Force returns all scenes that are currently active.
+func return_all_scenes() -> void:
+	for x: Node in active.keys():
+		if not is_instance_valid(x):
+			continue
+
+		return_scene(x)
+
+
+##Frees and clears all scenes pooled.
+func clear_pool() -> void:
+	return_all_scenes()
+
+	for x: Node in inactive:
+		if not is_instance_valid(x):
+			continue
+
+		x.queue_free()
+
+	inactive.clear()
+	active.clear()
+
+
+##Returns [code]true[/code] if [param scene] is active.
+func is_scene_active(scene: Node) -> bool:
+	return scene in active
 
 
 ##Returns the total amount inactive and active scenes pooled
@@ -160,16 +196,19 @@ func is_pool_exhausted() -> bool:
 	return inactive.is_empty()
 
 
-func _on_requested(node: Node) -> void:
-	if node is CanvasItem:
-		node.show()
+##Default method called when a scene is requested.
+func _on_requested(scene: Node) -> void:
+	if scene is CanvasItem:
+		scene.show()
 
 
-func _on_returned(node: Node) -> void:
-	if node is CanvasItem:
-		node.hide()
+##Default method called when a scene is returned.
+func _on_returned(scene: Node) -> void:
+	if scene is CanvasItem:
+		scene.hide()
 
 
+##Instantiates a new scene.
 func _instantiate_scene() -> Node:
 	var scene: Node = packed_scene.instantiate()
 	parent.add_child.call_deferred(scene)
