@@ -18,20 +18,14 @@ var direction: Vector2
 var speed: float
 var pierces: int = 0
 
-var life_timer: Timer
-
 @onready var sprite: Sprite2D = %Sprite
 @onready var collision: CollisionShape2D = %Collision
+@onready var life_timer: Timer = %LifeTimer
 
 
 func _ready() -> void:
-	_create_timer()
-
+	life_timer.timeout.connect(_on_life_timer_timeout)
 	body_entered.connect(_on_body_entered)
-
-
-func _physics_process(delta: float) -> void:
-	global_position += direction * speed * delta
 
 
 func set_bullet_data(new_data: BulletData) -> void:
@@ -45,14 +39,20 @@ func set_bullet_data(new_data: BulletData) -> void:
 	collision.shape.radius = new_data.collision_radius
 
 
-func start_movement(p_direction: Vector2, p_speed: float, p_lifetime: float) -> void:
-	if not data:
-		push_error("Bullet has no BulletData.")
-		return
+func start_movement(
+	p_direction: Vector2,
+	p_speed: float,
+	p_lifetime: float,
+	p_data: BulletData,
+) -> void:
+	if not is_node_ready():
+		await ready
 
 	if not life_timer:
 		push_error("Life Timer does not exist yet.")
 		return
+
+	set_bullet_data(p_data)
 
 	direction = p_direction
 	speed = p_speed
@@ -79,17 +79,6 @@ func stop_movement() -> void:
 
 	set_deferred(&"monitoring", false)
 	set_physics_process(false)
-
-
-func _create_timer() -> void:
-	life_timer = Timer.new()
-	life_timer.one_shot = true
-
-	life_timer.timeout.connect(_on_life_timer_timeout)
-
-	add_child(life_timer)
-
-	timer_created.emit()
 
 
 func _on_body_entered(body: Node2D) -> void:

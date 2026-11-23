@@ -17,3 +17,7 @@ region_rect = Rect2(0, 80, 16, 16)
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1648934125]
 unique_name_in_owner = true
 shape = SubResource("CircleShape2D_as85p")
+
+[node name="LifeTimer" type="Timer" parent="." unique_id=660871555]
+unique_name_in_owner = true
+one_shot = true

@@ -6,7 +6,9 @@ const TOP_LEFT := Vector2i(-40, -34)
 const BOTTOM_RIGHT := Vector2i(44, 32)
 
 var bullet_pool: ScenePool
+
 var active_enemies: Array[Enemy2D]
+var active_bullets: Array[Bullet2D]
 
 var wave: int = 0
 
@@ -27,18 +29,26 @@ func _ready() -> void:
 	Globals.spawn_bullet_requested.connect(spawn_bullet)
 
 
+func _physics_process(delta: float) -> void:
+	for x: Bullet2D in active_bullets:
+		if not x.is_physics_processing():
+			continue
+
+		x.global_position += x.direction * x.speed * delta
+
+
 func spawn_bullet(turret: Turret2D, bullet_pos: Vector2) -> void:
 	var bullet: Bullet2D = bullet_pool.request_scene()
 
 	var bullet_direction := Vector2.RIGHT.rotated(turret.rotation)
 	var bullet_speed: float = turret.bullet_speed
 	var bullet_lifetime: float = turret.bullet_lifetime
+	var bullet_data: BulletData = turret.bullet_data
 
 	bullet.set_collision_mask_value(2, turret.enemy_turret)
 	bullet.set_collision_mask_value(3, not turret.enemy_turret)
 
-	bullet.set_bullet_data(turret.bullet_data)
-	bullet.start_movement(bullet_direction, bullet_speed, bullet_lifetime)
+	bullet.start_movement(bullet_direction, bullet_speed, bullet_lifetime, bullet_data)
 
 	bullet.global_position = bullet_pos
 	bullet.reset_physics_interpolation()
@@ -92,6 +102,8 @@ func _create_bullet_pool() -> void:
 func _on_created(bullet: Bullet2D) -> void:
 	bullet.hide()
 	bullet.stop_movement()
+
+	active_bullets.append(bullet)
 
 	bullet.wall_collided.connect(_on_bullet_wall_collided.bind(bullet))
 	bullet.max_pierces_reached.connect(_on_bullet_life_timeout.bind(bullet))
