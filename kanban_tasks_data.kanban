@@ -10,7 +10,31 @@
 		{
 			"uuid": "ef874683-364e-4557-9c42-79861dadafab",
 			"title": "Todo",
-			"tasks": []
+			"tasks": [
+				"86b28e0c-18d1-45ab-8dec-89ab56b78229",
+				"8a17116c-1ca7-4dba-8c84-bff73526a574",
+				"717f30a7-3544-4737-9974-c56818a62081",
+				"2c282101-41c5-4979-945f-c6a4d8248c41",
+				"18e9aa55-f843-4b64-b294-0e5367b6dfec",
+				"3ce8bb11-c4e2-48a1-9ec5-ae878067f53f",
+				"4bc18353-9811-43ac-bb1d-39bd9b2da1b3",
+				"671e4642-58be-4642-8fec-29db272cb73b",
+				"1569d073-4dfa-427f-b15a-3356dcc33a57",
+				"2e9274ce-7770-4839-bf77-dcd7ef749a4a",
+				"be4ee4e0-7dac-43a8-ae35-95ea41946384",
+				"9d62d7df-48d6-4c6f-b484-01dfc2169178",
+				"a0e19f52-d7c3-4352-8923-ac7b0124dc7f",
+				"bf9b4016-be30-4304-a52a-d7b46515bfd2",
+				"632088f8-906a-43eb-84b7-0c1f6aaf3595",
+				"245c93c4-30f7-45e6-8f8e-1676bf57b944",
+				"a7158f13-51a5-49aa-a66d-63f20a88e1bf",
+				"1ae64592-b4b5-4775-9a92-4966be529f85",
+				"713e4d7c-d566-4b0b-b922-d5b45fd2f965",
+				"8946205f-b4a3-415c-b630-e5a9fb45a9df",
+				"357bed53-603e-48ee-9ae2-5cb4495094cc",
+				"3acd0f62-753e-4b5b-806a-698c65739964",
+				"0da75e39-a828-45ed-aaa0-167d8916c002"
+			]
 		},
 		{
 			"uuid": "8e17442f-3a75-40de-bcb7-aec1cf4cbcaa",
@@ -21,110 +45,175 @@
 			"uuid": "491af293-80a1-45b1-963f-521d47a23c2b",
 			"title": "Done",
 			"tasks": [
-				"7d3114f3-f001-49c2-8ac2-df770bbf5223",
-				"a8097f07-e2c8-4c43-b98f-463403368d28",
-				"2143543e-631a-4c64-ba2f-9d83d9f14fa4",
-				"49cca3bc-9701-4171-806a-75ed51b11ebf",
-				"9ddc47e0-e343-47fc-a9b9-17811656dd18",
-				"f209b085-be7f-4b96-b081-5bea1103d92a",
-				"6b7eb05c-52f3-4cb1-9881-bc32780d5c20",
-				"da98e93d-78d3-48c0-8e03-7fffd8db8d36",
-				"03040274-cab2-48bd-84cc-e1e98678108c",
-				"4f15d5ca-947d-481e-b5f6-31a79f98ab2f",
-				"8964b323-ce05-4ab0-8e44-c07ce4ca7e17",
-				"a0ab27df-a554-44e7-a5df-c18873dfd0e7",
-				"2b331268-3dc7-45a1-8d10-098a85559a3e"
+				"67daca04-fba6-43c9-ba9b-a48cebfced79"
 			]
 		}
 	],
 	"tasks": [
 		{
-			"uuid": "2b331268-3dc7-45a1-8d10-098a85559a3e",
-			"title": "Add a character controller",
+			"uuid": "86b28e0c-18d1-45ab-8dec-89ab56b78229",
+			"title": "Add EnemyData",
 			"description": "",
 			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
 			"steps": []
 		},
 		{
-			"uuid": "4f15d5ca-947d-481e-b5f6-31a79f98ab2f",
-			"title": "Add basic turret and shooting",
+			"uuid": "8a17116c-1ca7-4dba-8c84-bff73526a574",
+			"title": "Use ScenePool for enemies",
 			"description": "",
 			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
 			"steps": []
 		},
 		{
-			"uuid": "a0ab27df-a554-44e7-a5df-c18873dfd0e7",
-			"title": "Add the world tileset",
+			"uuid": "67daca04-fba6-43c9-ba9b-a48cebfced79",
+			"title": "Add BulletData",
 			"description": "",
 			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
 			"steps": []
 		},
 		{
-			"uuid": "03040274-cab2-48bd-84cc-e1e98678108c",
-			"title": "Add enemies, pathfinding and shooting",
+			"uuid": "717f30a7-3544-4737-9974-c56818a62081",
+			"title": "Add UpgradeData",
 			"description": "",
 			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
 			"steps": []
 		},
 		{
-			"uuid": "49cca3bc-9701-4171-806a-75ed51b11ebf",
-			"title": "Add more turrets",
+			"uuid": "2c282101-41c5-4979-945f-c6a4d8248c41",
+			"title": "Add weapon recoil",
 			"description": "",
 			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
 			"steps": []
 		},
 		{
-			"uuid": "9ddc47e0-e343-47fc-a9b9-17811656dd18",
-			"title": "Add player health and death",
+			"uuid": "18e9aa55-f843-4b64-b294-0e5367b6dfec",
+			"title": "Add weapon knockback",
 			"description": "",
 			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
 			"steps": []
 		},
 		{
-			"uuid": "2143543e-631a-4c64-ba2f-9d83d9f14fa4",
-			"title": "Add turret upgrades",
+			"uuid": "3ce8bb11-c4e2-48a1-9ec5-ae878067f53f",
+			"title": "Add bullet spawn and despawn effect",
 			"description": "",
 			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
 			"steps": []
 		},
 		{
-			"uuid": "8964b323-ce05-4ab0-8e44-c07ce4ca7e17",
-			"title": "Add dropshadows",
+			"uuid": "4bc18353-9811-43ac-bb1d-39bd9b2da1b3",
+			"title": "Add entity hit effect",
 			"description": "",
 			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
 			"steps": []
 		},
 		{
-			"uuid": "da98e93d-78d3-48c0-8e03-7fffd8db8d36",
-			"title": "Add enemy health and death",
+			"uuid": "671e4642-58be-4642-8fec-29db272cb73b",
+			"title": "Add title screen",
 			"description": "",
 			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
 			"steps": []
 		},
 		{
-			"uuid": "6b7eb05c-52f3-4cb1-9881-bc32780d5c20",
-			"title": "Add HUD",
+			"uuid": "1569d073-4dfa-427f-b15a-3356dcc33a57",
+			"title": "Add pause menu",
 			"description": "",
 			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
 			"steps": []
 		},
 		{
-			"uuid": "f209b085-be7f-4b96-b081-5bea1103d92a",
-			"title": "Add points and upgrades",
+			"uuid": "2e9274ce-7770-4839-bf77-dcd7ef749a4a",
+			"title": "Improve HUD UI",
 			"description": "",
 			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
 			"steps": []
 		},
 		{
-			"uuid": "a8097f07-e2c8-4c43-b98f-463403368d28",
-			"title": "Complete the map",
+			"uuid": "be4ee4e0-7dac-43a8-ae35-95ea41946384",
+			"title": "Add weapon reloading",
 			"description": "",
 			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
 			"steps": []
 		},
 		{
-			"uuid": "7d3114f3-f001-49c2-8ac2-df770bbf5223",
-			"title": "Add more enemies and waves",
+			"uuid": "9d62d7df-48d6-4c6f-b484-01dfc2169178",
+			"title": "Improve enemy pathfinding",
+			"description": "",
+			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
+			"steps": []
+		},
+		{
+			"uuid": "a0e19f52-d7c3-4352-8923-ac7b0124dc7f",
+			"title": "Improve wave system",
+			"description": "",
+			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
+			"steps": []
+		},
+		{
+			"uuid": "bf9b4016-be30-4304-a52a-d7b46515bfd2",
+			"title": "Add death screen",
+			"description": "",
+			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
+			"steps": []
+		},
+		{
+			"uuid": "632088f8-906a-43eb-84b7-0c1f6aaf3595",
+			"title": "Add more upgrades",
+			"description": "",
+			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
+			"steps": []
+		},
+		{
+			"uuid": "245c93c4-30f7-45e6-8f8e-1676bf57b944",
+			"title": "Add shadows to weapons, bullets and tiles",
+			"description": "",
+			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
+			"steps": []
+		},
+		{
+			"uuid": "a7158f13-51a5-49aa-a66d-63f20a88e1bf",
+			"title": "Improve the map",
+			"description": "",
+			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
+			"steps": []
+		},
+		{
+			"uuid": "1ae64592-b4b5-4775-9a92-4966be529f85",
+			"title": "Add interactive music based on wave",
+			"description": "",
+			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
+			"steps": []
+		},
+		{
+			"uuid": "713e4d7c-d566-4b0b-b922-d5b45fd2f965",
+			"title": "Add some sound effects",
+			"description": "",
+			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
+			"steps": []
+		},
+		{
+			"uuid": "8946205f-b4a3-415c-b630-e5a9fb45a9df",
+			"title": "Add dodge dashing",
+			"description": "",
+			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
+			"steps": []
+		},
+		{
+			"uuid": "357bed53-603e-48ee-9ae2-5cb4495094cc",
+			"title": "Add player i-frames",
+			"description": "",
+			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
+			"steps": []
+		},
+		{
+			"uuid": "3acd0f62-753e-4b5b-806a-698c65739964",
+			"title": "Render the world in a subviewport",
+			"description": "",
+			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
+			"steps": []
+		},
+		{
+			"uuid": "0da75e39-a828-45ed-aaa0-167d8916c002",
+			"title": "Move bullet physics process to World",
 			"description": "",
 			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
 			"steps": []
