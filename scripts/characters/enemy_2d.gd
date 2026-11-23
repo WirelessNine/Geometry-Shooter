@@ -5,22 +5,16 @@ signal died
 
 const SMOOTHNESS: float = 20.0
 const LOOK_ACCURCY: float = 0.6
+const DISTANCE_BUFFER: float = 15
 
-@export_range(1.0, 9999.9, 1.0) var max_health: int = 10
-@export var speed: float = 60.0
-@export var player_distance: float = 50.0
-@export var distance_buffer: float = 30.0
-@export var xp: int = 10
-@export var turret: Turret2D
+var data: EnemyData
 
 var health: int
-var bullet_timer: Timer
+var turret: Turret2D
 
-
-func _ready() -> void:
-	health = max_health
-
-	_create_bullet_timer()
+@onready var sprite: Sprite2D = %Sprite
+@onready var shadow: Sprite2D = %Shadow
+@onready var shoot_timer: Timer = %ShootTimer
 
 
 func _physics_process(delta: float) -> void:
@@ -33,10 +27,10 @@ func _physics_process(delta: float) -> void:
 
 	var lerp_weight: float = delta * SMOOTHNESS
 
-	if distance > player_distance + distance_buffer:
-		velocity = velocity.lerp(direction * speed, lerp_weight)
-	elif distance < player_distance - distance_buffer:
-		velocity = velocity.lerp(-direction * speed, lerp_weight)
+	if distance > data.distance_from_player + DISTANCE_BUFFER:
+		velocity = velocity.lerp(direction * data.speed, lerp_weight)
+	elif distance < data.distance_from_player - DISTANCE_BUFFER:
+		velocity = velocity.lerp(-direction * data.speed, lerp_weight)
 	else:
 		velocity = velocity.lerp(Vector2.ZERO, lerp_weight)
 
@@ -45,11 +39,31 @@ func _physics_process(delta: float) -> void:
 	_handle_turret(delta)
 
 
+func set_enemy_data(new_data: EnemyData) -> void:
+	if not is_node_ready():
+		await ready
+
+	data = new_data
+
+	health = new_data.health
+
+	if is_instance_valid(turret):
+		remove_child(turret)
+		turret.queue_free()
+
+	turret = new_data.weapon_scene.instantiate()
+
+	add_child(turret)
+
+	sprite.texture = new_data.enemy_sprite
+	shadow.texture = new_data.enemy_sprite
+
+
 func take_damage(amount: int) -> void:
 	health -= amount
 
 	if health <= 0:
-		Globals.add_level_progress(xp)
+		Globals.add_level_progress(data.xp)
 		queue_free()
 
 		died.emit()
@@ -65,17 +79,6 @@ func _handle_turret(delta: float) -> void:
 	var to_player: Vector2 = extrapolated_position - global_position
 
 	turret.rotation = lerp_angle(turret.rotation, to_player.angle(), delta * 20.0)
-
-
-func _create_bullet_timer() -> void:
-	bullet_timer = Timer.new()
-	bullet_timer.timeout.connect(_on_bullet_timer_timeout)
-
-	add_child(bullet_timer)
-
-	await get_tree().create_timer(randf_range(0.5, 2.0)).timeout
-
-	bullet_timer.start(turret.shoot_delay)
 
 
 func _on_bullet_timer_timeout() -> void:

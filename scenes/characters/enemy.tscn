@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bwwme27d8y6y3"]
+
+[ext_resource type="Script" uid="uid://dv0seof8e2ryu" path="res://scripts/characters/enemy_2d.gd" id="1_f2e6v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_as85p"]
+radius = 7.0
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1866562351]
+collision_layer = 4
+collision_mask = 13
+script = ExtResource("1_f2e6v")
+metadata/_custom_type_script = "uid://dv0seof8e2ryu"
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=527412255]
+unique_name_in_owner = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Shadow" type="Sprite2D" parent="Sprite" unique_id=267783617]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 0.42352942)
+show_behind_parent = true
+z_index = -1
+position = Vector2(1, 1)
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1173626652]
+shape = SubResource("CircleShape2D_as85p")
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=1535451614]
+unique_name_in_owner = true

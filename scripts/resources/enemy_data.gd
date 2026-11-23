@@ -1,6 +1,8 @@
 class_name EnemyData
 extends Resource
 
+##The sprite of the enemy.
+@export var enemy_sprite: Texture2D
 ##The max health of the enemy.
 @export_range(1.0, 500.0, 1.0) var health: int = 10
 ##The movement speed of the enemy.
