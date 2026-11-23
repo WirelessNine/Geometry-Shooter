@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://w8reij4s086d"]
+
+[ext_resource type="Script" uid="uid://r3q436m52h8b" path="res://scripts/resources/enemy_data.gd" id="1_fknaq"]
+[ext_resource type="Texture2D" uid="uid://cqh2sh6itf68u" path="res://resources/textures/enemies/pink_enemy.tres" id="1_j6y0b"]
+[ext_resource type="PackedScene" uid="uid://da5qm6jvngm3v" path="res://scenes/weapons/rifle.tscn" id="3_nqo8d"]
+
+[resource]
+script = ExtResource("1_fknaq")
+enemy_sprite = ExtResource("1_j6y0b")
+health = 15
+speed = 110.0
+back_up_distance = 80.0
+xp = 15
+weapon_scene = ExtResource("3_nqo8d")
+metadata/_custom_type_script = "uid://r3q436m52h8b"

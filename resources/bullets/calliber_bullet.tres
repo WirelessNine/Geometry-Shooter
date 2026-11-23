@@ -9,6 +9,6 @@ bullet_sprite = ExtResource("1_emn7a")
 damage = 10
 crit_chance = 0.5
 crit_amount = 1.2000000000000002
-collision_radius = 6.0
+collision_radius = 3.0
 rotate_sprite = true
 metadata/_custom_type_script = "uid://21nlv1yb8jh0"

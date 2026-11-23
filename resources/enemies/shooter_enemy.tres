@@ -1,8 +1,14 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dgwu7w80n4dof"]
 
 [ext_resource type="Script" uid="uid://r3q436m52h8b" path="res://scripts/resources/enemy_data.gd" id="1_uhmfu"]
+[ext_resource type="Texture2D" uid="uid://c6t55mpe5uq6o" path="res://resources/textures/enemies/red_enemy.tres" id="1_xrvi4"]
+[ext_resource type="PackedScene" uid="uid://2t6iabqy4880" path="res://scenes/weapons/shooter.tscn" id="2_yghal"]
 
 [resource]
 script = ExtResource("1_uhmfu")
-health = 27
+enemy_sprite = ExtResource("1_xrvi4")
+health = 15
+speed = 90.0
+distance_from_player = 70.0
+weapon_scene = ExtResource("2_yghal")
 metadata/_custom_type_script = "uid://r3q436m52h8b"

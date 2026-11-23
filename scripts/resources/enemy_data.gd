@@ -8,7 +8,9 @@ extends Resource
 ##The movement speed of the enemy.
 @export_range(1.0, 500.0, 0.5) var speed: float = 10
 ##The distance from the player where the enemy stops or back down.
-@export_range(1.0, 500.0, 0.5) var distance_from_player: float = 10
+@export_range(1.0, 500.0, 0.5) var distance_from_player: float = 100
+##The distance from the player where the enemy starts backing up.
+@export_range(1.0, 500.0, 0.5) var back_up_distance: float = 50
 ##The XP the enemy gives on death.
 @export_range(1.0, 500.0, 1.0) var xp: int = 10
 ##The scene of a [Turret2D] that the enemy uses.

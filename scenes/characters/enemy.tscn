@@ -23,7 +23,8 @@ z_index = -1
 position = Vector2(1, 1)
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1173626652]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1173626652]
+unique_name_in_owner = true
 shape = SubResource("CircleShape2D_as85p")
 
 [node name="ShootTimer" type="Timer" parent="." unique_id=1535451614]

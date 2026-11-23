@@ -114,7 +114,8 @@ func request_scene() -> Node:
 ##Makes the [param scene] inactive. [br]
 ##[important]: This method only works for Dynamic access mode.
 func return_scene(scene: Node) -> void:
-	if scene == null:
+	if not is_instance_valid(scene):
+		active.erase(scene)
 		return
 
 	if not access_mode == AccessMode.DYNAMIC:
@@ -162,6 +163,7 @@ func update_scenes(items: Array, method: Callable) -> void:
 func return_all_scenes() -> void:
 	for x: Node in active.keys():
 		if not is_instance_valid(x):
+			active.erase(x)
 			continue
 
 		return_scene(x)

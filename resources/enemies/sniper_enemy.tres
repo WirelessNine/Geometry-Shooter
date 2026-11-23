@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dpjdib3m4cuah"]
+
+[ext_resource type="Script" uid="uid://r3q436m52h8b" path="res://scripts/resources/enemy_data.gd" id="1_cs1uh"]
+[ext_resource type="Texture2D" uid="uid://dkp6ukvewjlir" path="res://resources/textures/enemies/brown_enemy.tres" id="1_h8e8i"]
+[ext_resource type="PackedScene" uid="uid://t8037sqjyaov" path="res://scenes/weapons/sniper.tscn" id="3_y1sw6"]
+
+[resource]
+script = ExtResource("1_cs1uh")
+enemy_sprite = ExtResource("1_h8e8i")
+health = 25
+speed = 90.0
+distance_from_player = 120.0
+back_up_distance = 100.0
+xp = 20
+weapon_scene = ExtResource("3_y1sw6")
+metadata/_custom_type_script = "uid://r3q436m52h8b"
