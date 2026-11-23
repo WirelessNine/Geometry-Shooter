@@ -2,7 +2,7 @@
 class_name Turret2D
 extends Node2D
 
-@export var bullet_scene: PackedScene
+@export var bullet_data: BulletData
 @export var space_raycast: RayCast2D
 @export var spawn_pos: Marker2D
 @export var bullet_speed: float = 150.0:

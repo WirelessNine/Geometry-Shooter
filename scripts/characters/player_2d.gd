@@ -35,7 +35,6 @@ func _physics_process(delta: float) -> void:
 
 
 func add_health(amount: int) -> void:
-	print(get_max_health())
 	health = mini(health + amount, get_max_health())
 
 	Globals.player_health_changed.emit(health)

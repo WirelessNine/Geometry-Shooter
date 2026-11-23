@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://t8037sqjyaov"]
 
 [ext_resource type="Script" uid="uid://dhj2j1358plyg" path="res://scenes/weapons/basic_turret.gd" id="1_ohs8w"]
-[ext_resource type="PackedScene" uid="uid://ovt0dpdja0fv" path="res://scenes/bullets/calliber.tscn" id="2_ohs8w"]
+[ext_resource type="Resource" uid="uid://byexkwgqjffea" path="res://resources/bullets/calliber_bullet.tres" id="2_ohs8w"]
 [ext_resource type="Texture2D" uid="uid://ca6bblgkxgdv7" path="res://assets/spritesheets/characters.png" id="3_xev6v"]
 
 [node name="Sniper" type="Node2D" unique_id=1488103016 node_paths=PackedStringArray("space_raycast", "spawn_pos")]
 show_behind_parent = true
 script = ExtResource("1_ohs8w")
-bullet_scene = ExtResource("2_ohs8w")
+bullet_data = ExtResource("2_ohs8w")
 space_raycast = NodePath("RayCast")
 spawn_pos = NodePath("Spawn")
 bullet_speed = 500.0

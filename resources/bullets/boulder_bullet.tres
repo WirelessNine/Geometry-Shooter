@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BulletData" format=3 uid="uid://1cwvkevcfuaj"]
+
+[ext_resource type="Script" uid="uid://21nlv1yb8jh0" path="res://scripts/resources/bullet_data.gd" id="1_6520b"]
+[ext_resource type="Texture2D" uid="uid://bwi2ierno341j" path="res://resources/textures/bullets/boulder_bullet.tres" id="1_rdxfd"]
+
+[resource]
+script = ExtResource("1_6520b")
+bullet_sprite = ExtResource("1_rdxfd")
+damage = 15
+crit_chance = 0.15000000000000002
+crit_amount = 1.2000000000000002
+collision_radius = 6.0
+metadata/_custom_type_script = "uid://21nlv1yb8jh0"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BulletData" format=3 uid="uid://ctwt1152llnvt"]
+
+[ext_resource type="Script" uid="uid://21nlv1yb8jh0" path="res://scripts/resources/bullet_data.gd" id="1_1wj08"]
+[ext_resource type="Texture2D" uid="uid://brqoul7mnhj3y" path="res://resources/textures/bullets/pellet_bullet.tres" id="1_211f2"]
+
+[resource]
+script = ExtResource("1_1wj08")
+bullet_sprite = ExtResource("1_211f2")
+damage = 2
+crit_chance = 0.6
+metadata/_custom_type_script = "uid://21nlv1yb8jh0"

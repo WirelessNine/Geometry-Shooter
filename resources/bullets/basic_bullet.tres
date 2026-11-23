@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="BulletData" format=3 uid="uid://5120tk8or70a"]
 
 [ext_resource type="Script" uid="uid://21nlv1yb8jh0" path="res://scripts/resources/bullet_data.gd" id="1_jisql"]
+[ext_resource type="Texture2D" uid="uid://bdabbobhbwcbw" path="res://resources/textures/bullets/basic_bullet.tres" id="1_xa0pa"]
 
 [resource]
 script = ExtResource("1_jisql")
-crit_chance = 0.35000000000000003
-crit_amount = 2.7
+bullet_sprite = ExtResource("1_xa0pa")
+crit_chance = 0.09999999999999999
+collision_radius = 4.0
 metadata/_custom_type_script = "uid://21nlv1yb8jh0"

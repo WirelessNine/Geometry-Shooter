@@ -12,15 +12,16 @@ signal max_pierces_reached
 ##Emitted when the life timer is created.
 signal timer_created
 
-@export var damage: int
-@export var max_pierces: int = 1
-@export var sprite: Sprite2D
+var data: BulletData
 
 var direction: Vector2
 var speed: float
 var pierces: int = 0
 
 var life_timer: Timer
+
+@onready var sprite: Sprite2D = %Sprite
+@onready var collision: CollisionShape2D = %Collision
 
 
 func _ready() -> void:
@@ -33,37 +34,51 @@ func _physics_process(delta: float) -> void:
 	global_position += direction * speed * delta
 
 
-func setup(p_direction: Vector2, p_speed: float) -> void:
-	set_physics_process(true)
+func set_bullet_data(new_data: BulletData) -> void:
+	data = new_data
+
+	sprite.texture = new_data.bullet_sprite
+
+	if not (collision.shape and collision.shape is CircleShape2D):
+		collision.shape = CircleShape2D.new()
+
+	collision.shape.radius = new_data.collision_radius
+
+
+func start_movement(p_direction: Vector2, p_speed: float, p_lifetime: float) -> void:
+	if not data:
+		push_error("Bullet has no BulletData.")
+		return
+
+	if not life_timer:
+		push_error("Life Timer does not exist yet.")
+		return
 
 	direction = p_direction
 	speed = p_speed
 	pierces = 0
 
-	set_deferred(&"monitoring", true)
-
-	if sprite:
+	if data.rotate_sprite:
 		rotation = direction.angle()
 
+	life_timer.start(p_lifetime)
 
-func reset() -> void:
-	set_physics_process(false)
+	set_deferred(&"monitoring", true)
+	set_physics_process(true)
+
+
+func stop_movement() -> void:
+	if not is_node_ready():
+		await ready
 
 	direction = Vector2.ZERO
 	speed = 0.0
 
+	if life_timer:
+		life_timer.stop()
+
 	set_deferred(&"monitoring", false)
-
-
-func start_timer(time_sec: float) -> void:
-	if not life_timer:
-		await timer_created
-
-	life_timer.start(time_sec)
-
-
-func stop_timer() -> void:
-	life_timer.stop()
+	set_physics_process(false)
 
 
 func _create_timer() -> void:
@@ -79,21 +94,21 @@ func _create_timer() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player2D:
-		body.take_damage(damage / Globals.get_upgrade_value(Globals.Upgrade.ENDURANCE))
+		body.take_damage(data.damage / Globals.get_upgrade_value(Globals.Upgrade.ENDURANCE))
 
 		pierces += 1
 
-		if pierces >= max_pierces:
+		if pierces >= data.pierces:
 			max_pierces_reached.emit()
 
 		entity_collided.emit()
 
 	elif body is Enemy2D:
-		body.take_damage(damage)
+		body.take_damage(data.damage)
 
 		pierces += 1
 
-		if pierces >= max_pierces:
+		if pierces >= data.pierces:
 			max_pierces_reached.emit()
 
 		entity_collided.emit()
