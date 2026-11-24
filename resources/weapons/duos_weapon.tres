@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://c868ldj28031r"]
+
+[ext_resource type="Resource" uid="uid://5120tk8or70a" path="res://resources/bullets/basic_bullet.tres" id="1_y1x22"]
+[ext_resource type="Script" uid="uid://b1syku0u40w5a" path="res://scripts/resources/weapon_data.gd" id="2_krw1r"]
+
+[resource]
+script = ExtResource("2_krw1r")
+bullet_data = ExtResource("1_y1x22")
+weapon_scene = "uid://bs7lxupdl0os4"
+metadata/_custom_type_script = "uid://b1syku0u40w5a"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://bcsog7xxccruw"]
+
+[ext_resource type="Resource" uid="uid://byexkwgqjffea" path="res://resources/bullets/calliber_bullet.tres" id="1_cksvm"]
+[ext_resource type="Script" uid="uid://b1syku0u40w5a" path="res://scripts/resources/weapon_data.gd" id="2_2ty1y"]
+
+[resource]
+script = ExtResource("2_2ty1y")
+bullet_data = ExtResource("1_cksvm")
+weapon_scene = "uid://t8037sqjyaov"
+bullet_speed = 500.0
+bullet_lifetime = 5.0
+shoot_delay = 1.4000000000000001
+metadata/_custom_type_script = "uid://b1syku0u40w5a"

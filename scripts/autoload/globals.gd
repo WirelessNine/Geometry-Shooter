@@ -19,7 +19,7 @@ var endurance_upgrade: UpgradeData
 var bullet_speed_upgrade: UpgradeData
 var reload_upgrade: UpgradeData
 
-var weapons: Array[PackedScene]
+var weapon_collection: Registry.Collection
 
 var points: int = 0
 var level: int = 0
@@ -27,13 +27,11 @@ var level_progress: int = 0
 
 
 func _ready() -> void:
-	weapons = [
-		load("uid://2t6iabqy4880"),
-		load("uid://t8037sqjyaov"),
-		load("uid://da5qm6jvngm3v"),
-		load("uid://bvljnc2ghoqwb"),
-		load("uid://bs7lxupdl0os4"),
-	]
+	weapon_collection = Registry.create_collection(
+		"weapon_data",
+		&"WeaponData",
+		"res://resources/weapons/",
+	)
 
 	max_health_upgrade = load("uid://dmcmknmhtgrju")
 	movement_speed_upgrade = load("uid://cfavert7neptq")

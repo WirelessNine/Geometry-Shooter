@@ -1,18 +1,15 @@
 [gd_scene format=3 uid="uid://bs7lxupdl0os4"]
 
 [ext_resource type="Script" uid="uid://cyqt8gpdr45aa" path="res://scenes/weapons/duos.gd" id="1_khmmb"]
-[ext_resource type="Resource" uid="uid://5120tk8or70a" path="res://resources/bullets/basic_bullet.tres" id="2_pm7oc"]
+[ext_resource type="Resource" uid="uid://c868ldj28031r" path="res://resources/weapons/duos_weapon.tres" id="2_pm7oc"]
 [ext_resource type="Texture2D" uid="uid://ca6bblgkxgdv7" path="res://assets/spritesheets/characters.png" id="3_ofweh"]
 
 [node name="Duos" type="Node2D" unique_id=1488103016 node_paths=PackedStringArray("space_raycast", "spawn_pos")]
 show_behind_parent = true
 script = ExtResource("1_khmmb")
-bullet_data = ExtResource("2_pm7oc")
+weapon_data = ExtResource("2_pm7oc")
 space_raycast = NodePath("RayCast")
 spawn_pos = NodePath("Spawn")
-bullet_speed = 180.0
-bullet_lifetime = 2.5
-shoot_delay = 0.7
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=133114263]
 position = Vector2(8, 0)

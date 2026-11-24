@@ -1,16 +1,15 @@
 [gd_scene format=3 uid="uid://2t6iabqy4880"]
 
 [ext_resource type="Script" uid="uid://dhj2j1358plyg" path="res://scenes/weapons/basic_turret.gd" id="1_yxfhi"]
-[ext_resource type="Resource" uid="uid://5120tk8or70a" path="res://resources/bullets/basic_bullet.tres" id="2_yxfhi"]
+[ext_resource type="Resource" uid="uid://dasfpr3h03075" path="res://resources/weapons/shooter_weapon.tres" id="2_yxfhi"]
 [ext_resource type="Texture2D" uid="uid://ca6bblgkxgdv7" path="res://assets/spritesheets/characters.png" id="3_soeln"]
 
 [node name="Shooter" type="Node2D" unique_id=1488103016 node_paths=PackedStringArray("space_raycast", "spawn_pos")]
 show_behind_parent = true
 script = ExtResource("1_yxfhi")
-bullet_data = ExtResource("2_yxfhi")
+weapon_data = ExtResource("2_yxfhi")
 space_raycast = NodePath("RayCast")
 spawn_pos = NodePath("Spawn")
-shoot_delay = 0.5
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=133114263]
 position = Vector2(8, 0)

@@ -6,7 +6,7 @@ const DEFAULT_HEALTH: int = 100
 const DEFAULT_SPEED: float = 120.0
 const SMOOTHNESS: float = 20.0
 
-var current_turret_scene: PackedScene
+var current_turret_data: WeaponData
 var current_turret: Turret2D
 var shoot_db: bool = false
 
@@ -16,7 +16,7 @@ var health: int
 
 
 func _ready() -> void:
-	set_turret(Globals.weapons[0])
+	set_turret(Globals.weapon_collection.get_item("shooter_weapon"))
 	health = get_max_health()
 
 	Globals.player = self
@@ -53,25 +53,25 @@ func get_max_health() -> int:
 	return roundi(DEFAULT_HEALTH * Globals.max_health_upgrade.value)
 
 
-func set_turret(turret_scene: PackedScene) -> void:
+func set_turret(weapon_data: WeaponData) -> void:
 	if is_instance_valid(current_turret):
 		current_turret.queue_free()
 
-	var turret: Turret2D = turret_scene.instantiate()
+	var turret: Turret2D = weapon_data.get_weapon_scene().instantiate()
 	add_child(turret)
 
 	current_turret = turret
-	current_turret_scene = turret_scene
+	current_turret_data = weapon_data
 
 
 func randomize_weapon() -> void:
-	var turret_scene: PackedScene = Globals.weapons.pick_random()
+	var turret_data: WeaponData = Globals.weapon_collection.get_random_item()
 
-	if turret_scene == current_turret_scene:
+	if turret_data == current_turret_data:
 		randomize_weapon()
 		return
 
-	set_turret(turret_scene)
+	set_turret(current_turret_data)
 
 
 func _handle_movement(delta: float) -> void:
@@ -95,7 +95,7 @@ func _handle_turret(delta: float) -> void:
 		shoot_db = true
 
 		current_turret.shoot()
-		bullet_timer.start(current_turret.shoot_delay)
+		bullet_timer.start(current_turret.weapon_data.shoot_delay)
 
 
 func _on_bullet_timer_timeout() -> void:

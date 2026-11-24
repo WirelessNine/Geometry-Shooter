@@ -51,7 +51,7 @@ func enable() -> void:
 		await ready
 
 	collision.set_deferred(&"disabled", false)
-	shoot_timer.start(turret.shoot_delay)
+	shoot_timer.start(turret.weapon_data.shoot_delay)
 
 	set_physics_process(true)
 
@@ -102,7 +102,7 @@ func take_damage(amount: int) -> void:
 
 func _handle_turret(delta: float) -> void:
 	var distance_from_turret: float = global_position.distance_to(Globals.player.global_position)
-	var bullet_travel_time: float = distance_from_turret / turret.bullet_speed
+	var bullet_travel_time: float = distance_from_turret / turret.weapon_data.bullet_speed
 
 	var extrapolated_position: Vector2 = Globals.player.global_position
 	extrapolated_position += Globals.player.velocity * bullet_travel_time * LOOK_ACCURCY

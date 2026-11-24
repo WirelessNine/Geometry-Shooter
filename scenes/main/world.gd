@@ -52,9 +52,9 @@ func spawn_bullet(turret: Turret2D, bullet_pos: Vector2) -> void:
 	var bullet: Bullet2D = bullet_pool.request_scene()
 
 	var bullet_direction := Vector2.RIGHT.rotated(turret.rotation)
-	var bullet_speed: float = turret.bullet_speed
-	var bullet_lifetime: float = turret.bullet_lifetime
-	var bullet_data: BulletData = turret.bullet_data
+	var bullet_speed: float = turret.weapon_data.bullet_speed
+	var bullet_lifetime: float = turret.weapon_data.bullet_lifetime
+	var bullet_data: BulletData = turret.weapon_data.bullet_data
 
 	bullet.set_collision_mask_value(2, turret.enemy_turret)
 	bullet.set_collision_mask_value(3, not turret.enemy_turret)
