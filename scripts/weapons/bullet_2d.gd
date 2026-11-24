@@ -83,7 +83,7 @@ func stop_movement() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player2D:
-		body.take_damage(data.damage / Globals.get_upgrade_value(Globals.Upgrade.ENDURANCE))
+		body.take_damage(data.damage / Globals.endurance_upgrade.value)
 
 		pierces += 1
 

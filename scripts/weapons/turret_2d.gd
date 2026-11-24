@@ -12,7 +12,7 @@ extends Node2D
 		if enemy_turret:
 			return bullet_speed
 
-		return bullet_speed * Globals.get_upgrade_value(Globals.Upgrade.BULLET_SPEED)
+		return bullet_speed * Globals.bullet_speed_upgrade.value
 
 @export var bullet_lifetime: float = 3.0
 @export var shoot_delay: float = 0.2:
@@ -22,7 +22,7 @@ extends Node2D
 		if enemy_turret:
 			return shoot_delay
 
-		return shoot_delay / Globals.get_upgrade_value(Globals.Upgrade.RELOAD)
+		return shoot_delay / Globals.reload_upgrade.value
 
 @export var enemy_turret: bool = false
 

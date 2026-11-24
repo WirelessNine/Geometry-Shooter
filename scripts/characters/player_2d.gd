@@ -1,5 +1,5 @@
 class_name Player2D
-extends CharacterBody2D
+extends Entity2D
 
 const DEFAULT_HEALTH: int = 100
 
@@ -50,7 +50,7 @@ func take_damage(amount: int) -> void:
 
 
 func get_max_health() -> int:
-	return roundi(DEFAULT_HEALTH * Globals.get_upgrade_value(Globals.Upgrade.MAX_HEALTH))
+	return roundi(DEFAULT_HEALTH * Globals.max_health_upgrade.value)
 
 
 func set_turret(turret_scene: PackedScene) -> void:
@@ -78,7 +78,7 @@ func _handle_movement(delta: float) -> void:
 	var input_vector: Vector2 = Input.get_vector(&"left", &"right", &"up", &"down")
 	var lerp_weight: float = delta * SMOOTHNESS
 
-	var speed: float = DEFAULT_SPEED * Globals.get_upgrade_value(Globals.Upgrade.MOVEMENT_SPEED)
+	var speed: float = DEFAULT_SPEED * Globals.movement_speed_upgrade.value
 
 	velocity = velocity.lerp(input_vector * speed, lerp_weight)
 

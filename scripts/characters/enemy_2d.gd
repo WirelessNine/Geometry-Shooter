@@ -1,5 +1,5 @@
 class_name Enemy2D
-extends CharacterBody2D
+extends Entity2D
 
 signal died
 
@@ -32,13 +32,14 @@ func _physics_process(delta: float) -> void:
 	var direction: Vector2 = to_player.normalized()
 
 	var lerp_weight: float = delta * SMOOTHNESS
+	var target_velocity := Vector2.ZERO
 
 	if distance > data.distance_from_player + DISTANCE_BUFFER:
-		velocity = velocity.lerp(direction * data.speed, lerp_weight)
+		target_velocity = direction * data.speed
 	elif distance < data.back_up_distance - DISTANCE_BUFFER:
-		velocity = velocity.lerp(-direction * data.speed, lerp_weight)
-	else:
-		velocity = velocity.lerp(Vector2.ZERO, lerp_weight)
+		target_velocity = -direction * data.speed
+
+	velocity = velocity.lerp(target_velocity, lerp_weight)
 
 	move_and_slide()
 

@@ -7,6 +7,7 @@
 script = ExtResource("1_yv0li")
 bullet_sprite = ExtResource("1_emn7a")
 damage = 10
+knockback = 110.0
 crit_chance = 0.5
 crit_amount = 1.2000000000000002
 collision_radius = 3.0

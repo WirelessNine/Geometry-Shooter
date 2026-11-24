@@ -1,0 +1,2 @@
+class_name Entity2D
+extends CharacterBody2D

@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_jisql")
 bullet_sprite = ExtResource("1_xa0pa")
-crit_chance = 0.09999999999999999
+knockback = 220.0
+crit_chance = 0.1
 collision_radius = 4.0
 metadata/_custom_type_script = "uid://21nlv1yb8jh0"

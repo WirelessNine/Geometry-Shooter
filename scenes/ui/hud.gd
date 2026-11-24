@@ -28,15 +28,15 @@ func _ready() -> void:
 	refresh_level()
 	refresh_points()
 
-	upgrade_max_health.pressed.connect(Globals.add_upgrade_level.bind(Globals.Upgrade.MAX_HEALTH))
+	upgrade_max_health.pressed.connect(Globals.add_upgrade_level.bind(Globals.max_health_upgrade))
 	upgrade_movement_speed.pressed.connect(
-		Globals.add_upgrade_level.bind(Globals.Upgrade.MOVEMENT_SPEED)
+		Globals.add_upgrade_level.bind(Globals.movement_speed_upgrade)
 	)
-	upgrade_endurance.pressed.connect(Globals.add_upgrade_level.bind(Globals.Upgrade.ENDURANCE))
+	upgrade_endurance.pressed.connect(Globals.add_upgrade_level.bind(Globals.endurance_upgrade))
 	upgrade_bullet_speed.pressed.connect(
-		Globals.add_upgrade_level.bind(Globals.Upgrade.BULLET_SPEED)
+		Globals.add_upgrade_level.bind(Globals.bullet_speed_upgrade)
 	)
-	upgrade_reload.pressed.connect(Globals.add_upgrade_level.bind(Globals.Upgrade.RELOAD))
+	upgrade_reload.pressed.connect(Globals.add_upgrade_level.bind(Globals.reload_upgrade))
 
 	Globals.player_health_changed.connect(refresh_health_bar)
 	Globals.upgrades_changed.connect(refresh_upgrades)
@@ -47,17 +47,15 @@ func _ready() -> void:
 
 func refresh_health_bar(new_value: int) -> void:
 	health_bar.value = new_value
-	health_bar.max_value = Player2D.DEFAULT_HEALTH * Globals.get_upgrade_value(
-		Globals.Upgrade.MAX_HEALTH
-	)
+	health_bar.max_value = Player2D.DEFAULT_HEALTH * Globals.max_health_upgrade.value
 
 
 func refresh_upgrades() -> void:
-	max_health_bar.value = Globals.get_upgrade_level(Globals.Upgrade.MAX_HEALTH)
-	movement_speed_bar.value = Globals.get_upgrade_level(Globals.Upgrade.MOVEMENT_SPEED)
-	endurance_bar.value = Globals.get_upgrade_level(Globals.Upgrade.ENDURANCE)
-	bullet_speed_bar.value = Globals.get_upgrade_level(Globals.Upgrade.BULLET_SPEED)
-	reload_bar.value = Globals.get_upgrade_level(Globals.Upgrade.RELOAD)
+	max_health_bar.value = Globals.max_health_upgrade.level
+	movement_speed_bar.value = Globals.movement_speed_upgrade.level
+	endurance_bar.value = Globals.endurance_upgrade.level
+	bullet_speed_bar.value = Globals.bullet_speed_upgrade.level
+	reload_bar.value = Globals.reload_upgrade.level
 
 	if Globals.player:
 		refresh_health_bar(Globals.player.health)

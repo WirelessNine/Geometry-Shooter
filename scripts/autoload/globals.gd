@@ -8,42 +8,16 @@ signal level_changed
 
 signal player_health_changed(new_value: int)
 
-enum Upgrade {
-	MAX_HEALTH,
-	MOVEMENT_SPEED,
-	ENDURANCE,
-	BULLET_SPEED,
-	RELOAD,
-}
-
 const BASE_LEVEL_REQUIRED: int = 50
 const LEVEL_GROWTH: float = 1.15
 
-const UPGRADE_DEFAULTS: Dictionary[Upgrade, float] = {
-	Upgrade.MAX_HEALTH: 1.0,
-	Upgrade.MOVEMENT_SPEED: 1.0,
-	Upgrade.ENDURANCE: 1.0,
-	Upgrade.BULLET_SPEED: 1.0,
-	Upgrade.RELOAD: 1.0,
-}
-
 var player: Player2D
 
-var upgrade_values: Dictionary[Upgrade, float] = {
-	Upgrade.MAX_HEALTH: 1.0,
-	Upgrade.MOVEMENT_SPEED: 1.0,
-	Upgrade.ENDURANCE: 1.0,
-	Upgrade.BULLET_SPEED: 1.0,
-	Upgrade.RELOAD: 1.0,
-}
-
-var upgrade_levels: Dictionary[Upgrade, int] = {
-	Upgrade.MAX_HEALTH: 0,
-	Upgrade.MOVEMENT_SPEED: 0,
-	Upgrade.ENDURANCE: 0,
-	Upgrade.BULLET_SPEED: 0,
-	Upgrade.RELOAD: 0,
-}
+var max_health_upgrade: UpgradeData
+var movement_speed_upgrade: UpgradeData
+var endurance_upgrade: UpgradeData
+var bullet_speed_upgrade: UpgradeData
+var reload_upgrade: UpgradeData
 
 var weapons: Array[PackedScene]
 
@@ -61,31 +35,23 @@ func _ready() -> void:
 		load("uid://bs7lxupdl0os4"),
 	]
 
+	max_health_upgrade = load("uid://dmcmknmhtgrju")
+	movement_speed_upgrade = load("uid://cfavert7neptq")
+	endurance_upgrade = load("uid://g84eu5brtyqa")
+	bullet_speed_upgrade = load("uid://6rwservvi6k3")
+	reload_upgrade = load("uid://clm8u4adlnyth")
 
-func set_upgrade_level(upgrade: Upgrade, new_level: int) -> void:
-	upgrade_levels[upgrade] = new_level
 
-	upgrade_values[upgrade] = UPGRADE_DEFAULTS[upgrade] + (0.1 * new_level)
-	upgrades_changed.emit()
-
-
-func add_upgrade_level(upgrade: Upgrade) -> void:
+func add_upgrade_level(upgrade: UpgradeData) -> void:
 	if points <= 0:
 		return
 
 	points -= 1
 
-	set_upgrade_level(upgrade, upgrade_levels[upgrade] + 1)
+	upgrade.add_level()
 
 	points_changed.emit()
-
-
-func get_upgrade_level(upgrade: Upgrade) -> int:
-	return upgrade_levels[upgrade]
-
-
-func get_upgrade_value(upgrade: Upgrade) -> float:
-	return upgrade_values[upgrade]
+	upgrades_changed.emit()
 
 
 func add_level_progress(amount: int) -> void:

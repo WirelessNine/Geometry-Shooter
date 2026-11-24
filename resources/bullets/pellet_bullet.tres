@@ -7,5 +7,6 @@
 script = ExtResource("1_1wj08")
 bullet_sprite = ExtResource("1_211f2")
 damage = 2
+knockback = 150.0
 crit_chance = 0.6
 metadata/_custom_type_script = "uid://21nlv1yb8jh0"
