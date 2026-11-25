@@ -27,6 +27,8 @@ var enemy_scenes: Array[PackedScene] = [
 
 
 func _ready() -> void:
+	Transition.fade_out()
+
 	enemy_data_collection = Registry.create_collection(
 		"enemy_data",
 		&"EnemyData",

@@ -1,0 +1,151 @@
+[gd_resource type="Theme" format=3 uid="uid://dks52fsv3f182"]
+
+[ext_resource type="StyleBox" uid="uid://fii5f3pwca2c" path="res://project_template/resources/theme/styleboxes/button/default_disabled.tres" id="1_8bwit"]
+[ext_resource type="StyleBox" uid="uid://bsxl1drxklycv" path="res://project_template/resources/theme/styleboxes/button/focus.tres" id="2_q5x4v"]
+[ext_resource type="StyleBox" uid="uid://dxe2rbfbxbact" path="res://project_template/resources/theme/styleboxes/button/default_hover.tres" id="3_7eg7j"]
+[ext_resource type="StyleBox" uid="uid://irpnximxfaat" path="res://project_template/resources/theme/styleboxes/button/default_pressed.tres" id="4_8cqmq"]
+[ext_resource type="StyleBox" uid="uid://vqpfskxk58dc" path="res://project_template/resources/theme/styleboxes/button/default_normal.tres" id="5_w3ltk"]
+[ext_resource type="StyleBox" uid="uid://66h84tdk1djs" path="res://project_template/resources/theme/styleboxes/scroll/grabber.tres" id="6_3er6f"]
+[ext_resource type="Texture2D" uid="uid://covmnm2xlpw5v" path="res://project_template/resources/theme/textures/box_checked.tres" id="6_p6k2c"]
+[ext_resource type="Texture2D" uid="uid://co8krnnel71bj" path="res://project_template/resources/theme/textures/box_checked_disabled.tres" id="7_6ckt2"]
+[ext_resource type="StyleBox" uid="uid://dcc58epn0k2ep" path="res://project_template/resources/theme/styleboxes/scroll/grabber_highlight.tres" id="7_gtud6"]
+[ext_resource type="Texture2D" uid="uid://ded2ikmlbu7ok" path="res://project_template/resources/theme/textures/radio_checked.tres" id="8_0oifa"]
+[ext_resource type="StyleBox" uid="uid://dv5kpa0rxmj7k" path="res://project_template/resources/theme/styleboxes/scroll/scroll_h.tres" id="8_kkjl5"]
+[ext_resource type="Texture2D" uid="uid://crclvavacc1lq" path="res://project_template/resources/theme/textures/radio_checked_disabled.tres" id="9_04j0s"]
+[ext_resource type="Texture2D" uid="uid://c8kdqy8gk2t75" path="res://project_template/resources/theme/textures/grabber_h.tres" id="9_5h5r3"]
+[ext_resource type="Texture2D" uid="uid://bx3ctlrw20h1f" path="res://project_template/resources/theme/textures/radio_unchecked.tres" id="10_jxckq"]
+[ext_resource type="Texture2D" uid="uid://c4758nota7kmu" path="res://project_template/resources/theme/textures/grabber_highlight_h.tres" id="10_kinb4"]
+[ext_resource type="Texture2D" uid="uid://w8ovd0l18qqs" path="res://project_template/resources/theme/textures/radio_unchecked_disabled.tres" id="11_kvvvs"]
+[ext_resource type="StyleBox" uid="uid://dda8e06y240w" path="res://project_template/resources/theme/styleboxes/slider/grabber_area.tres" id="11_rsbih"]
+[ext_resource type="Texture2D" uid="uid://1gqg7ggmcu0g" path="res://project_template/resources/theme/textures/box_unchecked.tres" id="12_gdi4u"]
+[ext_resource type="StyleBox" uid="uid://bewmcp4e1oh1k" path="res://project_template/resources/theme/styleboxes/slider/grabber_area_highlight.tres" id="12_w7unx"]
+[ext_resource type="Texture2D" uid="uid://devcjyw4v5fwm" path="res://project_template/resources/theme/textures/box_unchecked_disabled.tres" id="13_7avea"]
+[ext_resource type="StyleBox" uid="uid://ev1b3gj0vuuc" path="res://project_template/resources/theme/styleboxes/slider/slider.tres" id="13_8v701"]
+[ext_resource type="StyleBox" uid="uid://c8eyktbdjl4q1" path="res://project_template/resources/theme/styleboxes/text/focus.tres" id="14_but6p"]
+[ext_resource type="StyleBox" uid="uid://pvtew204vk5h" path="res://project_template/resources/theme/styleboxes/list/hovered.tres" id="15_4u76o"]
+[ext_resource type="StyleBox" uid="uid://g6y30lbj43tt" path="res://project_template/resources/theme/styleboxes/list/selected.tres" id="16_mph3s"]
+[ext_resource type="StyleBox" uid="uid://cupo6hkjlkv01" path="res://project_template/resources/theme/styleboxes/list/panel.tres" id="17_2tqv6"]
+[ext_resource type="StyleBox" uid="uid://b7b5akbdta08v" path="res://project_template/resources/theme/styleboxes/panel/panel.tres" id="18_n5x18"]
+[ext_resource type="FontFile" uid="uid://dubgt6318q4a8" path="res://project_template/assets/fonts/monogram-extended.ttf" id="18_w7unx"]
+[ext_resource type="StyleBox" uid="uid://d3am1nqcj68ot" path="res://project_template/resources/theme/styleboxes/scroll/scroll_v.tres" id="19_p6k2c"]
+[ext_resource type="StyleBox" uid="uid://caw5grwl4docr" path="res://project_template/resources/theme/styleboxes/button/variant_disabled.tres" id="20_6ckt2"]
+[ext_resource type="StyleBox" uid="uid://5lugnhccerk0" path="res://project_template/resources/theme/styleboxes/button/variant_hover.tres" id="21_0oifa"]
+[ext_resource type="StyleBox" uid="uid://bw6jcug5cfcxd" path="res://project_template/resources/theme/styleboxes/button/variant_pressed.tres" id="22_04j0s"]
+[ext_resource type="StyleBox" uid="uid://bnb1a128fa71e" path="res://project_template/resources/theme/styleboxes/button/variant_normal.tres" id="23_jxckq"]
+[ext_resource type="StyleBox" uid="uid://v1xrga4ag3ea" path="res://project_template/resources/theme/styleboxes/panel/background.tres" id="25_kvvvs"]
+[ext_resource type="StyleBox" uid="uid://0ps1655aymkx" path="res://project_template/resources/theme/styleboxes/text/normal.tres" id="26_wdwyf"]
+[ext_resource type="Texture2D" uid="uid://cxexff8lec4eg" path="res://project_template/resources/theme/textures/arrow_right.tres" id="28_60h48"]
+[ext_resource type="Texture2D" uid="uid://j87cm3ouikto" path="res://project_template/resources/theme/textures/arrow_left.tres" id="29_av1c8"]
+[ext_resource type="StyleBox" uid="uid://725r2c5qbu03" path="res://project_template/resources/theme/styleboxes/popup/hover.tres" id="30_6elcm"]
+[ext_resource type="StyleBox" uid="uid://brotkd17xtms2" path="res://project_template/resources/theme/styleboxes/popup/separator.tres" id="31_bijwd"]
+[ext_resource type="StyleBox" uid="uid://dmengqmi4ma1w" path="res://project_template/resources/theme/styleboxes/popup/panel.tres" id="32_1ptjw"]
+[ext_resource type="Texture2D" uid="uid://bpki4fx1fmy1y" path="res://project_template/resources/theme/textures/arrow_down.tres" id="33_0oifa"]
+[ext_resource type="Texture2D" uid="uid://dx3q2wq1vbivn" path="res://project_template/resources/theme/textures/close.tres" id="33_ct4tn"]
+[ext_resource type="Texture2D" uid="uid://uk7y55ysbbb5" path="res://project_template/resources/theme/textures/arrow_up.tres" id="34_04j0s"]
+[ext_resource type="StyleBox" uid="uid://doaq2v2e17f62" path="res://project_template/resources/theme/styleboxes/button/empty.tres" id="34_kjqk4"]
+[ext_resource type="Texture2D" uid="uid://dxi8hkumioxfs" path="res://project_template/resources/theme/textures/grabber_v.tres" id="36_q7gvg"]
+[ext_resource type="Texture2D" uid="uid://dgj0lix3i4nk7" path="res://project_template/resources/theme/textures/grabber_highlight_v.tres" id="37_gshyf"]
+
+[resource]
+default_font = ExtResource("18_w7unx")
+Button/styles/disabled = ExtResource("1_8bwit")
+Button/styles/focus = ExtResource("2_q5x4v")
+Button/styles/hover = ExtResource("3_7eg7j")
+Button/styles/hover_pressed = ExtResource("4_8cqmq")
+Button/styles/normal = ExtResource("5_w3ltk")
+Button/styles/pressed = ExtResource("4_8cqmq")
+CheckBox/icons/checked = ExtResource("6_p6k2c")
+CheckBox/icons/checked_disabled = ExtResource("7_6ckt2")
+CheckBox/icons/radio_checked = ExtResource("8_0oifa")
+CheckBox/icons/radio_checked_disabled = ExtResource("9_04j0s")
+CheckBox/icons/radio_unchecked = ExtResource("10_jxckq")
+CheckBox/icons/radio_unchecked_disabled = ExtResource("11_kvvvs")
+CheckBox/icons/unchecked = ExtResource("12_gdi4u")
+CheckBox/icons/unchecked_disabled = ExtResource("13_7avea")
+HScrollBar/styles/grabber = ExtResource("6_3er6f")
+HScrollBar/styles/grabber_highlight = ExtResource("7_gtud6")
+HScrollBar/styles/grabber_pressed = ExtResource("7_gtud6")
+HScrollBar/styles/scroll = ExtResource("8_kkjl5")
+HScrollBar/styles/scroll_focus = ExtResource("8_kkjl5")
+HSlider/icons/grabber = ExtResource("9_5h5r3")
+HSlider/icons/grabber_highlight = ExtResource("10_kinb4")
+HSlider/styles/grabber_area = ExtResource("11_rsbih")
+HSlider/styles/grabber_area_highlight = ExtResource("12_w7unx")
+HSlider/styles/slider = ExtResource("13_8v701")
+ItemList/styles/focus = ExtResource("14_but6p")
+ItemList/styles/hovered = ExtResource("15_4u76o")
+ItemList/styles/hovered_selected = ExtResource("16_mph3s")
+ItemList/styles/hovered_selected_focus = ExtResource("16_mph3s")
+ItemList/styles/panel = ExtResource("17_2tqv6")
+ItemList/styles/selected = ExtResource("16_mph3s")
+ItemList/styles/selected_focus = ExtResource("16_mph3s")
+LineEdit/styles/focus = ExtResource("14_but6p")
+LineEdit/styles/normal = ExtResource("26_wdwyf")
+OptionButton/styles/hover_pressed = ExtResource("3_7eg7j")
+OptionButton/styles/pressed = ExtResource("3_7eg7j")
+PanelContainer/styles/panel = ExtResource("18_n5x18")
+PopupMenu/icons/checked = ExtResource("6_p6k2c")
+PopupMenu/icons/checked_disabled = ExtResource("7_6ckt2")
+PopupMenu/icons/radio_checked = ExtResource("8_0oifa")
+PopupMenu/icons/radio_checked_disabled = ExtResource("9_04j0s")
+PopupMenu/icons/radio_unchecked = ExtResource("10_jxckq")
+PopupMenu/icons/radio_unchecked_disabled = ExtResource("11_kvvvs")
+PopupMenu/icons/submenu = ExtResource("28_60h48")
+PopupMenu/icons/submenu_mirrored = ExtResource("29_av1c8")
+PopupMenu/icons/unchecked = ExtResource("12_gdi4u")
+PopupMenu/icons/unchecked_disabled = ExtResource("13_7avea")
+PopupMenu/styles/hover = ExtResource("30_6elcm")
+PopupMenu/styles/labeled_separator_left = ExtResource("31_bijwd")
+PopupMenu/styles/labeled_separator_right = ExtResource("31_bijwd")
+PopupMenu/styles/panel = ExtResource("32_1ptjw")
+PopupMenu/styles/separator = ExtResource("31_bijwd")
+SpinBox/icons/down = ExtResource("33_0oifa")
+SpinBox/icons/down_disabled = ExtResource("33_0oifa")
+SpinBox/icons/down_hover = ExtResource("33_0oifa")
+SpinBox/icons/down_pressed = ExtResource("33_0oifa")
+SpinBox/icons/up = ExtResource("34_04j0s")
+SpinBox/icons/up_disabled = ExtResource("34_04j0s")
+SpinBox/icons/up_hover = ExtResource("34_04j0s")
+SpinBox/icons/up_pressed = ExtResource("34_04j0s")
+SpinBox/styles/down_background = ExtResource("5_w3ltk")
+SpinBox/styles/down_background_disabled = ExtResource("34_kjqk4")
+SpinBox/styles/down_background_hovered = ExtResource("3_7eg7j")
+SpinBox/styles/down_background_pressed = ExtResource("4_8cqmq")
+SpinBox/styles/up_background = ExtResource("5_w3ltk")
+SpinBox/styles/up_background_disabled = ExtResource("34_kjqk4")
+SpinBox/styles/up_background_hovered = ExtResource("3_7eg7j")
+SpinBox/styles/up_background_pressed = ExtResource("4_8cqmq")
+TabBar/constants/tab_separation = 1
+TabBar/icons/close = ExtResource("33_ct4tn")
+TabBar/styles/button_highlight = ExtResource("34_kjqk4")
+TabBar/styles/button_pressed = ExtResource("34_kjqk4")
+TabBar/styles/tab_disabled = ExtResource("1_8bwit")
+TabBar/styles/tab_focus = ExtResource("2_q5x4v")
+TabBar/styles/tab_hovered = ExtResource("3_7eg7j")
+TabBar/styles/tab_selected = ExtResource("4_8cqmq")
+TabBar/styles/tab_unselected = ExtResource("5_w3ltk")
+VScrollBar/styles/grabber = ExtResource("6_3er6f")
+VScrollBar/styles/grabber_highlight = ExtResource("7_gtud6")
+VScrollBar/styles/grabber_pressed = ExtResource("7_gtud6")
+VScrollBar/styles/scroll = ExtResource("19_p6k2c")
+VScrollBar/styles/scroll_focus = ExtResource("19_p6k2c")
+VSlider/icons/grabber = ExtResource("36_q7gvg")
+VSlider/icons/grabber_highlight = ExtResource("37_gshyf")
+VSlider/styles/grabber_area = ExtResource("11_rsbih")
+VSlider/styles/grabber_area_highlight = ExtResource("12_w7unx")
+VSlider/styles/slider = ExtResource("13_8v701")
+button_variant/base_type = &"Button"
+button_variant/styles/disabled = ExtResource("20_6ckt2")
+button_variant/styles/hover = ExtResource("21_0oifa")
+button_variant/styles/hover_pressed = ExtResource("22_04j0s")
+button_variant/styles/normal = ExtResource("23_jxckq")
+button_variant/styles/pressed = ExtResource("22_04j0s")
+grid_inner/base_type = &"GridContainer"
+grid_inner/constants/h_separation = 2
+grid_inner/constants/v_separation = 2
+h_box_inner/base_type = &"HBoxContainer"
+h_box_inner/constants/separation = 2
+panel_background/base_type = &"PanelContainer"
+panel_background/styles/panel = ExtResource("25_kvvvs")
+v_box_inner/base_type = &"VBoxContainer"
+v_box_inner/constants/separation = 2

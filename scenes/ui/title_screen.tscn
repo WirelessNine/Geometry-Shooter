@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cl0i512au6f61"]
+
+[ext_resource type="Texture2D" uid="uid://c873q43hhrqc8" path="res://assets/repo/background.png" id="1_eb34j"]
+[ext_resource type="Script" uid="uid://chbs08lilkcgs" path="res://scenes/ui/title_screen.gd" id="2_aqpy5"]
+
+[node name="TitleScreen" type="TextureRect" unique_id=1443778750]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"panel_background"
+texture = ExtResource("1_eb34j")
+stretch_mode = 6
+script = ExtResource("2_aqpy5")
+
+[node name="BGPanel" type="PanelContainer" parent="." unique_id=2143452986]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"panel_background"
+
+[node name="Title" type="Label" parent="BGPanel" unique_id=1822284836]
+layout_mode = 2
+size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 16)
+theme_override_font_sizes/font_size = 32
+text = "Geometry Shooter"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="BGPanel" unique_id=457509890]
+layout_mode = 2
+size_flags_vertical = 8
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -80)
+text = "Press Enter to start!"
+horizontal_alignment = 1
