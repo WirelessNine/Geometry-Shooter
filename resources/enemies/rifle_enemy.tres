@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://w8reij4s086d"]
 
 [ext_resource type="Script" uid="uid://r3q436m52h8b" path="res://scripts/resources/enemy_data.gd" id="1_fknaq"]
-[ext_resource type="Texture2D" uid="uid://cqh2sh6itf68u" path="res://resources/textures/enemies/pink_enemy.tres" id="1_j6y0b"]
+[ext_resource type="Texture2D" uid="uid://cqh2sh6itf68u" path="res://resources/textures/entities/pink_enemy.tres" id="1_j6y0b"]
 [ext_resource type="PackedScene" uid="uid://da5qm6jvngm3v" path="res://scenes/weapons/rifle.tscn" id="3_nqo8d"]
 
 [resource]

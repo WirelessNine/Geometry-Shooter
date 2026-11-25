@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://btj1tfe0y27la"]
 
 [ext_resource type="Script" uid="uid://tdfl7fxi2x2t" path="res://scripts/characters/player_2d.gd" id="1_rp718"]
-[ext_resource type="Texture2D" uid="uid://ca6bblgkxgdv7" path="res://assets/spritesheets/characters.png" id="2_yewv4"]
+[ext_resource type="Texture2D" uid="uid://dyruryn5c5ep0" path="res://resources/textures/entities/player.tres" id="2_yewv4"]
+[ext_resource type="Script" uid="uid://lsxi8p82hbfi" path="res://scripts/nodes/sprite_shadow_2d.gd" id="3_76oj4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_as85p"]
 radius = 7.0
@@ -14,16 +15,11 @@ metadata/_custom_type_script = "uid://tdfl7fxi2x2t"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1289123426]
 texture = ExtResource("2_yewv4")
-region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="Shadow" type="Sprite2D" parent="." unique_id=220405139]
-modulate = Color(0, 0, 0, 0.42352942)
-show_behind_parent = true
-position = Vector2(1, 1)
-texture = ExtResource("2_yewv4")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
+[node name="SpriteShadow" type="Sprite2D" parent="Sprite" unique_id=453083261]
+script = ExtResource("3_76oj4")
+metadata/_custom_type_script = "uid://lsxi8p82hbfi"
 
 [node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=2064486428]
 shape = SubResource("CircleShape2D_as85p")

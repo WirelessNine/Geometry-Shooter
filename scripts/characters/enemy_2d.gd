@@ -15,7 +15,6 @@ var turret: Turret2D
 var hit_tween: Tween
 
 @onready var sprite: Sprite2D = %Sprite
-@onready var shadow: Sprite2D = %Shadow
 @onready var collision: CollisionShape2D = %Collision
 
 @onready var shoot_timer: Timer = %ShootTimer
@@ -87,7 +86,6 @@ func set_enemy_data(new_data: EnemyData) -> void:
 	add_child(turret)
 
 	sprite.texture = new_data.enemy_sprite
-	shadow.texture = new_data.enemy_sprite
 
 
 func take_damage(amount: int) -> void:

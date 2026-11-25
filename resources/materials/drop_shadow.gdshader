@@ -1,49 +1,36 @@
 shader_type canvas_item;
 
-uniform int dist = 2;
-uniform vec4 color: source_color = vec4(0.0, 0.0, 0.0, 0.5);
-uniform float angle: hint_range(0.0, 360.0) = 90.0;
+// Offset for the shadow (in pixels).
+uniform vec2 shadow_offset = vec2(10.0, 10.0); 
 
-varying vec2 main_uv;
-varying vec2 shadow_uv;
+// Color of the shadow (RGBA format, default: semi-transparent black).
+uniform vec4 shadow_color : source_color = vec4(0.0, 0.0, 0.0, 0.3);
+
+// A varying to store the sprite's rotation angle computed in the vertex shader.
+varying float sprite_rotation;
+
+// Function to rotate a 2D point by a given angle (in radians).
+vec2 rotate_point(vec2 point, float angle) {
+    float s = sin(angle);
+    float c = cos(angle);
+    return vec2(
+        point.x * c - point.y * s,
+        point.x * s + point.y * c
+    );
+}
 
 void vertex() {
-	
-	vec2 uv = TEXTURE_PIXEL_SIZE * float(dist * 2);
-	
-	vec2 uv_half = uv * 0.5;
-	vec2 uv_dist = uv + 1.0;
-	
-	vec2 shadow_direction = (vec4(cos(radians(angle)), sin(radians(angle)), 0.0, 1.0) * MODEL_MATRIX).xy;
-	
-	VERTEX *= uv_dist;
-	
-	main_uv = UV * uv_dist - uv_half;
-	shadow_uv = main_uv - shadow_direction * uv_half;
+    // Calculate the sprite's rotation angle from the MODEL_MATRIX (rotation matrix).
+    sprite_rotation = atan(MODEL_MATRIX[0][1], MODEL_MATRIX[0][0]);
+    
+    // Adjust the shadow's offset by rotating it in the opposite direction of the sprite's rotation.
+    VERTEX.xy += rotate_point(shadow_offset, -sprite_rotation);
 }
 
 void fragment() {
-	
-	// sample colors for shadow
-	float shadow_amt = texture(TEXTURE, shadow_uv).a
-		* step(-1.0, -shadow_uv.x)
-		* step(-1.0, -shadow_uv.y)
-		* step(0.0, shadow_uv.x)
-		* step(0.0, shadow_uv.y);
-	
-	// shadow color
-	COLOR = color * shadow_amt;
-	
-	// sample main colors on top of shadow
-	vec4 main_color = texture(TEXTURE, main_uv)
-		* step(-1.0, -main_uv.x)
-		* step(-1.0, -main_uv.y)
-		* step(0.0, main_uv.x)
-		* step(0.0, main_uv.y);
-	
-	// need to make area where main and shadow overlap black for next step
-	COLOR = mix(COLOR, vec4(0.0, 0.0, 0.0, 1.0), main_color.a);
-
-	// add main color on top of blackened area
-	COLOR += main_color * main_color.a;
+    // Sample the original texture to obtain the sprite's color.
+    vec4 tex_color = texture(TEXTURE, UV);
+    
+    // Apply the shadow color by multiplying the sprite's texture color with the shadow color.
+    COLOR = tex_color * shadow_color;
 }

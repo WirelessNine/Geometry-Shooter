@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dgh8ctoeqsmk2"]
 
-[ext_resource type="Texture2D" uid="uid://dkp6ukvewjlir" path="res://resources/textures/enemies/brown_enemy.tres" id="1_7rser"]
+[ext_resource type="Texture2D" uid="uid://dkp6ukvewjlir" path="res://resources/textures/entities/brown_enemy.tres" id="1_7rser"]
 [ext_resource type="Script" uid="uid://r3q436m52h8b" path="res://scripts/resources/enemy_data.gd" id="1_223bu"]
 [ext_resource type="PackedScene" uid="uid://bvljnc2ghoqwb" path="res://scenes/weapons/bowler.tscn" id="3_33drj"]
 
