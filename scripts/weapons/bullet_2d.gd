@@ -18,6 +18,8 @@ var direction: Vector2
 var speed: float
 var pierces: int = 0
 
+var pop_tween: Tween
+
 @onready var sprite: Sprite2D = %Sprite
 @onready var collision: CollisionShape2D = %Collision
 @onready var life_timer: Timer = %LifeTimer
@@ -79,6 +81,18 @@ func stop_movement() -> void:
 
 	set_deferred(&"monitoring", false)
 	set_physics_process(false)
+
+
+func play_pop(reverse: bool) -> void:
+	if is_instance_valid(pop_tween) and pop_tween.is_running():
+		pop_tween.kill()
+
+	var target_alpha: float = 0.0 if reverse else 1.0
+
+	pop_tween = create_tween()
+	pop_tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+	pop_tween.tween_property(sprite, ^"modulate:a", target_alpha, 0.1)
 
 
 func _on_body_entered(body: Node2D) -> void:

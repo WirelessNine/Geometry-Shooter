@@ -136,11 +136,16 @@ func _on_bullet_created(bullet: Bullet2D) -> void:
 
 func _on_bullet_requested(bullet: Bullet2D) -> void:
 	bullet.show()
+	bullet.play_pop(false)
 
 
 func _on_bullet_returned(bullet: Bullet2D) -> void:
-	bullet.hide()
 	bullet.stop_movement()
+	bullet.play_pop(true)
+
+	await bullet.pop_tween.finished
+
+	bullet.hide()
 
 
 func _on_enemy_created(enemy: Enemy2D) -> void:
