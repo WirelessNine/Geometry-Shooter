@@ -111,6 +111,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 	elif body is Enemy2D:
 		body.take_damage(data.damage)
+		body.play_hit_tween()
 
 		pierces += 1
 

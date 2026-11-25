@@ -12,6 +12,8 @@ var data: EnemyData
 var health: int
 var turret: Turret2D
 
+var hit_tween: Tween
+
 @onready var sprite: Sprite2D = %Sprite
 @onready var shadow: Sprite2D = %Shadow
 @onready var collision: CollisionShape2D = %Collision
@@ -98,6 +100,22 @@ func take_damage(amount: int) -> void:
 		pool.return_scene(self)
 
 		died.emit()
+
+
+func play_hit_tween() -> void:
+	if hit_tween and hit_tween.is_running():
+		hit_tween.kill()
+
+	hit_tween = create_tween().set_parallel(true)
+	hit_tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+
+	sprite.set_instance_shader_parameter(&"on", true)
+	sprite.scale = Vector2.ONE * 0.6
+
+	hit_tween.tween_property(sprite, ^"scale", Vector2.ONE, 0.2)
+	hit_tween.tween_callback(sprite.set_instance_shader_parameter.bind(&"on", false)).set_delay(
+		0.05
+	)
 
 
 func _handle_turret(delta: float) -> void:
