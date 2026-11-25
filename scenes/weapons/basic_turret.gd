@@ -6,3 +6,5 @@ func shoot() -> void:
 		return
 
 	Globals.spawn_bullet_requested.emit(self, spawn_pos.global_position)
+
+	play_shoot_tween()

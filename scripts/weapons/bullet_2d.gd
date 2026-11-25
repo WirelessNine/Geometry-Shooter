@@ -84,6 +84,9 @@ func stop_movement() -> void:
 
 
 func play_pop(reverse: bool) -> void:
+	if not sprite:
+		return
+
 	if is_instance_valid(pop_tween) and pop_tween.is_running():
 		pop_tween.kill()
 
