@@ -22,8 +22,6 @@
 				"a7158f13-51a5-49aa-a66d-63f20a88e1bf",
 				"1ae64592-b4b5-4775-9a92-4966be529f85",
 				"713e4d7c-d566-4b0b-b922-d5b45fd2f965",
-				"8946205f-b4a3-415c-b630-e5a9fb45a9df",
-				"357bed53-603e-48ee-9ae2-5cb4495094cc",
 				"3acd0f62-753e-4b5b-806a-698c65739964"
 			]
 		},
@@ -36,6 +34,7 @@
 			"uuid": "491af293-80a1-45b1-963f-521d47a23c2b",
 			"title": "Done",
 			"tasks": [
+				"8946205f-b4a3-415c-b630-e5a9fb45a9df",
 				"4bc18353-9811-43ac-bb1d-39bd9b2da1b3",
 				"671e4642-58be-4642-8fec-29db272cb73b",
 				"1c282401-1d0d-4349-aa6a-64c9e76839e2",
@@ -188,13 +187,6 @@
 		{
 			"uuid": "8946205f-b4a3-415c-b630-e5a9fb45a9df",
 			"title": "Add dodge dashing",
-			"description": "",
-			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
-			"steps": []
-		},
-		{
-			"uuid": "357bed53-603e-48ee-9ae2-5cb4495094cc",
-			"title": "Add player i-frames",
 			"description": "",
 			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
 			"steps": []

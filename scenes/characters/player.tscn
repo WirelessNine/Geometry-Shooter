@@ -34,9 +34,18 @@ unique_name_in_owner = true
 one_shot = true
 
 [node name="RegenerationTimer" type="Timer" parent="." unique_id=1654279934]
+unique_name_in_owner = true
 process_callback = 0
 wait_time = 5.0
 autostart = true
 
-[connection signal="timeout" from="BulletTimer" to="." method="_on_bullet_timer_timeout"]
-[connection signal="timeout" from="RegenerationTimer" to="." method="_on_regeneration_timer_timeout"]
+[node name="DashTimer" type="Timer" parent="." unique_id=1058162326]
+unique_name_in_owner = true
+process_callback = 0
+wait_time = 0.05
+one_shot = true
+
+[node name="DashCooldown" type="Timer" parent="." unique_id=830097461]
+unique_name_in_owner = true
+process_callback = 0
+one_shot = true
