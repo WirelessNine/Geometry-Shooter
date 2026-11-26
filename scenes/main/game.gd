@@ -58,6 +58,9 @@ func spawn_bullet(turret: Turret2D, bullet_pos: Vector2) -> void:
 	var bullet_lifetime: float = turret.weapon_data.bullet_lifetime
 	var bullet_data: BulletData = turret.weapon_data.bullet_data
 
+	if not turret.enemy_turret:
+		bullet_speed *= Globals.bullet_speed_upgrade.value
+
 	bullet.set_collision_mask_value(2, turret.enemy_turret)
 	bullet.set_collision_mask_value(3, not turret.enemy_turret)
 

@@ -25,12 +25,15 @@
 		{
 			"uuid": "8e17442f-3a75-40de-bcb7-aec1cf4cbcaa",
 			"title": "Doing",
-			"tasks": []
+			"tasks": [
+				"6ead589a-429e-4066-adc0-958f9737f92f"
+			]
 		},
 		{
 			"uuid": "491af293-80a1-45b1-963f-521d47a23c2b",
 			"title": "Done",
 			"tasks": [
+				"ac349743-284c-47d7-b302-5fdfec8ebc39",
 				"632088f8-906a-43eb-84b7-0c1f6aaf3595",
 				"2e9274ce-7770-4839-bf77-dcd7ef749a4a",
 				"245c93c4-30f7-45e6-8f8e-1676bf57b944",
@@ -229,6 +232,20 @@
 		{
 			"uuid": "1c282401-1d0d-4349-aa6a-64c9e76839e2",
 			"title": "Add Weapon shoot animation",
+			"description": "",
+			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
+			"steps": []
+		},
+		{
+			"uuid": "ac349743-284c-47d7-b302-5fdfec8ebc39",
+			"title": "Fix some upgrades not working",
+			"description": "",
+			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
+			"steps": []
+		},
+		{
+			"uuid": "6ead589a-429e-4066-adc0-958f9737f92f",
+			"title": "Reset stats on death",
 			"description": "",
 			"category": "cd737cd9-6461-4ad6-990e-addd7040d8f0",
 			"steps": []

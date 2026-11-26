@@ -123,7 +123,7 @@ func _handle_turret(delta: float) -> void:
 		can_shoot = true
 
 		current_turret.shoot()
-		bullet_timer.start(current_turret.weapon_data.shoot_delay)
+		bullet_timer.start(current_turret.weapon_data.shoot_delay / Globals.reload_upgrade.value)
 
 
 func _on_bullet_timer_timeout() -> void:
