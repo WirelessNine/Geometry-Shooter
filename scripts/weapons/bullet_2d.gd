@@ -110,7 +110,7 @@ func _on_body_entered(body: Node2D) -> void:
 		entity_collided.emit()
 
 	elif body is Enemy2D:
-		body.take_damage(data.damage)
+		body.take_damage(data.damage * Globals.bullet_damage_upgrade.value)
 		body.play_hit_tween()
 
 		pierces += 1

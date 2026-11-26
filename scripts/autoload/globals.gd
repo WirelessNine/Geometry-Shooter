@@ -14,14 +14,16 @@ const LEVEL_GROWTH: float = 1.15
 var player: Player2D
 
 var max_health_upgrade: UpgradeData
+var regeneration_upgrade: UpgradeData
 var movement_speed_upgrade: UpgradeData
 var endurance_upgrade: UpgradeData
+var bullet_damage_upgrade: UpgradeData
 var bullet_speed_upgrade: UpgradeData
 var reload_upgrade: UpgradeData
 
 var weapon_collection: Registry.Collection
 
-var points: int = 0
+var points: int = 50
 var level: int = 0
 var level_progress: int = 0
 
@@ -34,8 +36,10 @@ func _ready() -> void:
 	)
 
 	max_health_upgrade = load("uid://dmcmknmhtgrju")
+	regeneration_upgrade = load("uid://c72nvbdtmrhxo")
 	movement_speed_upgrade = load("uid://cfavert7neptq")
 	endurance_upgrade = load("uid://g84eu5brtyqa")
+	bullet_damage_upgrade = load("uid://poroh1o73fig")
 	bullet_speed_upgrade = load("uid://6rwservvi6k3")
 	reload_upgrade = load("uid://clm8u4adlnyth")
 

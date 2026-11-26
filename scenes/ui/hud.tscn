@@ -130,6 +130,43 @@ texture_hover = ExtResource("8_4jqwt")
 texture_disabled = ExtResource("3_136eg")
 stretch_mode = 3
 
+[node name="RegenerationBar" type="TextureProgressBar" parent="UpgradesVBox/UpgradesGrid" unique_id=1503794577]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 16)
+layout_mode = 2
+max_value = 10.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_under = ExtResource("4_h022r")
+texture_progress = ExtResource("5_4jqwt")
+tint_progress = Color(1, 0.48000002, 0.8266666, 1)
+
+[node name="Label" type="Label" parent="UpgradesVBox/UpgradesGrid/RegenerationBar" unique_id=93519321]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Regeneration"
+label_settings = ExtResource("2_gss2c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeRegeneration" type="TextureButton" parent="UpgradesVBox/UpgradesGrid" unique_id=402006395]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("2_8qguk")
+texture_pressed = ExtResource("8_4jqwt")
+texture_hover = ExtResource("8_4jqwt")
+texture_disabled = ExtResource("3_136eg")
+stretch_mode = 3
+
 [node name="MovementSpeedBar" type="TextureProgressBar" parent="UpgradesVBox/UpgradesGrid" unique_id=1569972294]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 16)
@@ -194,6 +231,43 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="UpgradeEndurance" type="TextureButton" parent="UpgradesVBox/UpgradesGrid" unique_id=1028181890]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("2_8qguk")
+texture_pressed = ExtResource("8_4jqwt")
+texture_hover = ExtResource("8_4jqwt")
+texture_disabled = ExtResource("3_136eg")
+stretch_mode = 3
+
+[node name="BulletDamageBar" type="TextureProgressBar" parent="UpgradesVBox/UpgradesGrid" unique_id=1489908051]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 16)
+layout_mode = 2
+max_value = 15.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_under = ExtResource("4_h022r")
+texture_progress = ExtResource("5_4jqwt")
+tint_progress = Color(0.40120327, 0.24419999, 0.74, 1)
+
+[node name="Label" type="Label" parent="UpgradesVBox/UpgradesGrid/BulletDamageBar" unique_id=618190999]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bullet Damage"
+label_settings = ExtResource("2_gss2c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeBulletDamage" type="TextureButton" parent="UpgradesVBox/UpgradesGrid" unique_id=759602519]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(15, 0)
 layout_mode = 2

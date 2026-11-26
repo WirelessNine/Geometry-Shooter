@@ -1,6 +1,7 @@
 class_name Player2D
 extends Entity2D
 
+const DEFAULT_REGENERATION: float = 8.0
 const DEFAULT_HEALTH: int = 100
 
 const DEFAULT_SPEED: float = 120.0
@@ -131,6 +132,8 @@ func _on_bullet_timer_timeout() -> void:
 
 func _on_regeneration_timer_timeout() -> void:
 	add_health(roundi(get_max_health() * 0.05))
+
+	regeneration_timer.start(DEFAULT_REGENERATION / Globals.regeneration_upgrade.value)
 
 
 func _on_dash_timer_timeout() -> void:
