@@ -62,6 +62,7 @@ func take_damage(amount: int) -> void:
 	health -= amount
 
 	if health <= 0:
+		Globals.reset_stats()
 		get_tree().reload_current_scene.call_deferred()
 
 	Globals.player_health_changed.emit(health)

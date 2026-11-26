@@ -78,3 +78,17 @@ func add_level_progress(amount: int) -> void:
 
 func get_next_level_requirement() -> int:
 	return roundi(BASE_LEVEL_REQUIRED * pow(LEVEL_GROWTH, level))
+
+
+func reset_stats() -> void:
+	max_health_upgrade.reset()
+	regeneration_upgrade.reset()
+	movement_speed_upgrade.reset()
+	endurance_upgrade.reset()
+	bullet_damage_upgrade.reset()
+	bullet_speed_upgrade.reset()
+	reload_upgrade.reset()
+
+	points = 0
+	level = 0
+	level_progress = 0
